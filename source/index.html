@@ -3,20 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
-<body>
+<body class="body">
     <h1>Submit Event - JavaScript</h1>
-    <div>
+    <div class="forms">
+        <div class="request">
     <form id="myForm" class="form" method="POST">
-        <label for="username">User name</label>
-        <input type="text" name="username" id="username" placeholder="name">
-        <button type="submit">login</button>
+        <!-- <label for="username">User name</label>
+        <input type="text" name="username" id="username" placeholder="name"> -->
+    
+        <button type="submit">get user</button>
     </form>
+        </div>
+    <div id="response" class="response"></div>
+    <div id="data" class="response"></div>
+
+
     </div>
-    <div>
-        <p id="output"></p>
-    </div>
+
     <script src="index.js"></script>
 </body>
 </html>
