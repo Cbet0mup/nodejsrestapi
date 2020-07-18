@@ -13,7 +13,7 @@ router.get('/', async(req, res) => {
     }
 });
 
-// Получаем запись из БД по ID
+// Получаем запись из БД по name
 router.get('/:postID', async(req, res) => {
     try{
        const post = await Post.findById(req.params.postID);

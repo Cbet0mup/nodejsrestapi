@@ -3,7 +3,7 @@ const myForm = document.getElementById('myForm');
 // const input = document.getElementById('username');
 const output = document.getElementById('response');
 
-const getUserUrl = "https://reqres.in/api/users/2"
+const getUserUrl = "http://localhost:3000/posts"
 
  myForm.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -27,17 +27,22 @@ async function getResource(url){
 
 function getSingleUser(response){
 
-    let obj = response.data;
+    let obj = response;
     //console.log(obj)
-    for (const key in obj) {
-        console.log(key + " : " + obj[key])
-    }
-
-    output.innerHTML = `
-        <img src="${obj.avatar}" alt="">
-        <p class="text">${obj.first_name + " " + obj.last_name}</p>
-        <p class="text">${obj.email}</p>
+    obj.forEach(element => {
+       console.log(element); 
+       output.innerHTML = `
+        <p class="text">${element.name}</p>
+        <p class="text">${element.post}</p>
+        <p class="text">${element.email}</p>
     `;
+    });
+
+    // output.innerHTML = `
+    //     <p class="text">${obj.name}</p>
+    //     <p class="text">${obj.post}</p>
+    //     <p class="text">${obj.email}</p>
+    // `;
 }
 
 
