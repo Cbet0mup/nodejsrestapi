@@ -1,22 +1,28 @@
 .body {
-    background-color: black;
+    background-color: rgb(197, 192, 223);
 }
 
 .request {
 width: 25%;
 margin: 15px;
 float: left;
-background-color: rgb(201, 173, 173);
 }
 .response {
     width: 25%;
 margin: 15px;
 float: left;
 background-color: rgb(117, 187, 123);
+border: darkblue;
+border-style: solid;
+
 
 }
 
 .text {
-    color: chartreuse;
-    font-size: 200%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: rgb(4, 5, 3);
+    line-height: 0.5;
+    font-size: small;
+    text-align: justify;
+    padding-left: 15px;
 }

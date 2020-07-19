@@ -28,21 +28,24 @@ async function getResource(url){
 function getSingleUser(response){
 
     let obj = response;
+    output.innerHTML = '';
     //console.log(obj)
     obj.forEach(element => {
-       console.log(element); 
-       output.innerHTML = `
-        <p class="text">${element.name}</p>
-        <p class="text">${element.post}</p>
-        <p class="text">${element.email}</p>
-    `;
+       //console.log(element); 
+        let blockName = document.createElement('p');
+        let blockPost = document.createElement('p');
+        let blockEmail = document.createElement('p');
+
+        blockName.innerHTML = `${element.name}`;
+        blockPost.innerHTML = `${element.post}`;
+        blockEmail.innerHTML = `${element.email}`;
+
+        output.append(blockName);
+        output.append(blockPost);
+        output.append(blockEmail);
+
     });
 
-    // output.innerHTML = `
-    //     <p class="text">${obj.name}</p>
-    //     <p class="text">${obj.post}</p>
-    //     <p class="text">${obj.email}</p>
-    // `;
 }
 
 

@@ -14,11 +14,11 @@ router.get('/', async(req, res) => {
 });
 
 // Получаем запись из БД по name
-router.get('/:postID', async(req, res) => {
+router.get('/:name', async(req, res) => {
     try{
-       const post = await Post.findById(req.params.postID);
+       const post = await Post.findOne(req.params.name);
         res.json(post);
-        console.log(req.params.postID);
+        console.log(req.params.name);
     }catch(err){
         res.json({message: err});
     }
