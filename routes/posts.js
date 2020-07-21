@@ -27,8 +27,9 @@ router.get('/:name', async(req, res) => {
 // отправляем запись в БД согласно заданной модели
 router.post('/', async(req, res) => {
     const post = new Post({
-        title: req.body.title,
-        description: req.body.description
+        name: req.body.name,
+        post: req.body.post,
+        email: req.body.email
     });
 
     try{

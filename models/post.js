@@ -13,6 +13,11 @@ const PostSchema = mongoose.Schema({
 		type: String,
         required: true
 	}
-});
+	  });
+	  /* 
+	  writeConcern: {
+		j: true,
+		wtimeout: 1000
+	  }*/
 
 module.exports = mongoose.model('Posts', PostSchema);
