@@ -7,22 +7,40 @@
     <title>Document</title>
 </head>
 <body class="body">
-    <h1>Submit Event - JavaScript</h1>
-    <div class="forms">
+    <header class="head">
+        <h1>Форма поиска человеков по БД MongoDB</h1>
+    </header>
+
+    <div class="wrapper">
+        <div class="content">
         <div class="request">
+            <div class="blockRequest">
     <form id="myForm" class="form" method="POST">
         <!-- <label for="username">User name</label>
         <input type="text" name="username" id="username" placeholder="name"> -->
     
-        <button type="submit">get all user</button>
+        <button type="submit">get all user to DB</button>
     </form>
-        </div>
+</div>
+
+<div class="blockRequest">
+        <form id="searchToName" class="form" method="post">
+            <label for="get inf by name">Поиск по имени</label>
+        <input type="text" name="username" id="username" placeholder="name">
+            <button type="submit">get inf by name</button>
+        </form>
+    </div>
+</div>
+    
+    
     <div id="response" class="response text"></div>
     <!-- <div id="data" class="response"></div> -->
 
+    
 
-    </div>
-
-    <script src="index.js"></script>
+    <!-- <footer class="footer">all rigth reserved@</footer> -->
+</div>
+</div>
+    <script src="./script/index.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
-
 const myForm = document.getElementById('myForm');
+const searchToName = document.getElementById('searchToName');
 // const input = document.getElementById('username');
 const output = document.getElementById('response');
 
@@ -13,6 +13,11 @@ const getUserUrl = "http://localhost:3000/posts"
             .catch((err)=>{console.log(err)});
      });
 
+searchToName.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let name = document.getElementById('username');
+    console.log(name.value);
+});
 
 async function getResource(url){
 
