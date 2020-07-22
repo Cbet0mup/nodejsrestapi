@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-require('dotenv/config');  // скрытая херня с секретными данными про БД
+require('dotenv/config');  // скрытая херня с секретными данными login/pass
 
 app.use(bodyParser.json());
 // Import Routes
@@ -12,7 +12,7 @@ app.use('/posts', postRoute);
 
 app.use('/', express.static('source'));  // чтобы не ебаться с шаблонизаторами
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;//process.env.PORT_CONNECT;
 
 //DB connect 
 

@@ -16,22 +16,28 @@
         <div class="request">
 
         <div class="blockRequest">
-                <form id="searchByName" class="form" method="post">
-                    <label for="get inf by name">Внести новый объект</label>
-                <input type="text" name="username" id="username" placeholder="name">
-                <input type="text" name="post" id="post" placeholder="post">
-                <input type="text" name="email" id="email" placeholder="email">
+                <form id="writeUser" class="form" method="post">
+                    <label class="input" for="get inf by name">Внести новый объект</label>
+                        <input class="input" type="text" name="username" id="username" placeholder="name">
+                        <input class="input" type="text" name="post" id="post" placeholder="post">
+                        <input class="input" type="text" name="email" id="email" placeholder="email">
         
-                    <button class="button" type="submit">write new object</button>
+                    <button class="button input" type="submit">write new object</button>
                 </form>
         </div>
 
-            <div class="blockRequest">
-    <form id="myForm" class="form" method="POST">
-        <label for="get all user to DB">Получить список всех объектов</label>
-        <!-- <input type="text" name="username" id="username" placeholder="name"> -->
-    
-        <button class="button" type="submit">get all user to DB</button>
+<div class="blockRequest">
+    <form id="getAllData" class="form">
+        <label class="input" for="get all user to DB">Получить список всех объектов</label>    
+        <button class="button input" type="submit">get all user to DB</button>
+    </form>
+</div>
+
+<div class="blockRequest">
+    <form id="getUserByName" class="form" method="POST">
+        <label class="input" for="userOneName">Получить объект по имени</label>
+        <input type="text" name="name" id="userOneName" placeholder="name">
+        <button class="button input" type="submit">get one user to DB</button>
     </form>
 </div>
 
@@ -39,12 +45,17 @@
     
     
     <div id="response" class="response text"></div>
-    <!-- <div id="data" class="response"></div> -->
 
 
     <!-- <footer class="footer">all rigth reserved@</footer> -->
 </div>
 </div>
+    <script src="./script/getUser.js"></script>
+    <script src="./script/getDataByName.js"></script>
+    <script src="./script/writeNewUser.js"></script>
+    <!-- <script src="./script/"></script> -->
+
+    <script src="./script/getAllData.js"></script>
     <script src="./script/index.js"></script>
 </body>
 </html>

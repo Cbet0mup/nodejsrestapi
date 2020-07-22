@@ -14,10 +14,5 @@ const PostSchema = mongoose.Schema({
         required: true
 	}
 	  });
-	  /* 
-	  writeConcern: {
-		j: true,
-		wtimeout: 1000
-	  }*/
 
 module.exports = mongoose.model('Posts', PostSchema);
