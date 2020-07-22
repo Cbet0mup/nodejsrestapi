@@ -33,13 +33,14 @@
 
 .request {
 width: 25%;
+min-width: 255px;
 margin: 15px;
 padding: 15px;
 float: left;
 display: flexbox;
 }
 .response {
-    width: 25%;
+    width: 30%;
     padding: 10px;
 margin: 15px;
 float: left;
@@ -59,10 +60,12 @@ float: left;
     border: 1px solid red;
     margin: 10px;
     padding: 5px;
-    color: red;    
+    color: red; 
+    min-width: 250px;   
 }
 
 #ul {
+    min-width: 340px;
     margin: 3px;
     border: 1px solid rgb(10, 95, 10);
     padding-left: 10px;

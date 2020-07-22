@@ -7,6 +7,8 @@ const router = express.Router();
 router.get('/', async(req, res) => {
     try{
         const post = await Post.find();
+        // res.set('Access-Control-Allow-Credentials', 'true');
+        // res.set('Access-Control-Allow-Origin', 'http://127.0.0.1:3000');
         res.json(post);
     }catch(err){
         res.json({message: err});

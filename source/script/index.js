@@ -1,3 +1,5 @@
+const post3 = new Post('Name');
+console.log(post3);
 const myForm = document.getElementById('myForm');
 const writeUser = document.getElementById('searchByName');
 // const input = document.getElementById('username');
