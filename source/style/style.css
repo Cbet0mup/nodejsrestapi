@@ -40,12 +40,11 @@ margin: 15px;
 float: left;
 }
 
-.text {
+.text, p {
     font-family: Verdana, Arial, Helvetica, sans-serif;
     color: lime;
     line-height: 1.5;
     font-size: 15px;
-    /* text-align: justify; */
     padding-left: 15px;
 }
 .blockRequest {

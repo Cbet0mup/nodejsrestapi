@@ -1,9 +1,8 @@
-function getUser(response){
-
-    let obj = response;
+function getUser(data){
+    
     output.innerHTML = '';
-    //console.log(obj)
-    obj.forEach(element => {
+    
+    data.forEach(element => {
         let ul = document.createElement('ul'); 
         ul.id = 'ul';
         let blockName = document.createElement('li');

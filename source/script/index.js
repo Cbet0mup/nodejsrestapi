@@ -1,12 +1,13 @@
 const getAllDataUser = document.getElementById('getAllData');
 const writeUser = document.getElementById('writeUser');
-const getUserByNameOne = document.getElementById('getUserByName');
+const getUserByOneName = document.getElementById('getUserByName');
 const output = document.getElementById('response');
 //const ulTable = document.getElementById('ul');
 
 const getUserUrl = "http://localhost:3000/posts/"
 
 //********************************************************** */
+//вывести всю базу (хе-хе)
  getAllDataUser.addEventListener("submit", (e) => {
         e.preventDefault();
         getAllData(getUserUrl)
@@ -15,17 +16,15 @@ const getUserUrl = "http://localhost:3000/posts/"
      });
 
 /******************************************************************** */
-
+//запись новго
 writeUser.addEventListener("submit", (e) => {
     e.preventDefault();
     output.innerHTML = '';
     let name = document.getElementById('username');
     let post = document.getElementById('post');
     let email = document.getElementById('email');
-    console.log("Name: " + name.value);
-    console.log("Post: " + post.value);
-    console.log("Email: " + email.value);
-    let user = {
+    
+    let user = {      //объект нового юзверя
         name: `${name.value}`,
         post: `${post.value}`,
         email: `${email.value}`
@@ -33,21 +32,31 @@ writeUser.addEventListener("submit", (e) => {
 
     writeNewUser(getUserUrl, user)
         .then(data => {console.log(data)});
-
+        //чистим
         name.value = "";
         post.value = "";
         email.value = "";
 });
 
-
-getUserByNameOne.addEventListener("submit", (e) => {
+//запрос по имени
+getUserByOneName.addEventListener("submit", (e) => {
     e.preventDefault();
+    //console.log('запрос по имени');
     output.innerHTML = '';
     let inputUserName = document.getElementById('userOneName');
-    //console.log(inputUserName.value);
-    inputUserName.value = "";
-    getDataByName(getUserUrl, inputUserName.value)
-        .then(data => {console.log(data)});
+    
+    let uri = getUserUrl + inputUserName.value;  //гибрид адреса и параметра запроса
+
+    getDataByName(uri)
+        .then(data => {
+            if (data == null || data) {
+               errInResponse();
+               return;
+            } else{
+            console.log(data);
+            getUser(new Array(data));
+            }
+        });
 
 
 });
