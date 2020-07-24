@@ -10,7 +10,7 @@ const getUserUrl = "http://localhost:3000/posts/"
 //вывести всю базу (хе-хе)
  getAllDataUser.addEventListener("submit", (e) => {
         e.preventDefault();
-        getAllData(getUserUrl)
+        getData(getUserUrl)
             .then(data => getUser(data))
             .catch((err)=>{console.log(err)});
      });
@@ -25,13 +25,18 @@ writeUser.addEventListener("submit", (e) => {
     let email = document.getElementById('email');
     
     let user = {      //объект нового юзверя
-        name: `${name.value}`,
-        post: `${post.value}`,
-        email: `${email.value}`
+        name: `${name.value.trim()}`,
+        post: `${post.value.trim()}`,
+        email: `${email.value.trim()}`
     };
 
     writeNewUser(getUserUrl, user)
-        .then(data => {console.log(data)});
+        .then(data => {
+            output.innerHTML = '';
+            let paragraph = document.createElement('p');
+            paragraph.innerText = `Внесён новый объект \n name: ${data.name} \n id: ${data._id}`;
+            output.append(paragraph);
+        });
         //чистим
         name.value = "";
         post.value = "";
@@ -45,15 +50,17 @@ getUserByOneName.addEventListener("submit", (e) => {
     output.innerHTML = '';
     let inputUserName = document.getElementById('userOneName');
     
-    let uri = getUserUrl + inputUserName.value;  //гибрид адреса и параметра запроса
 
-    getDataByName(uri)
+    let uri = getUserUrl + inputUserName.value.trim();  //гибрид адреса и параметра запроса
+
+    getData(uri)
         .then(data => {
-            if (data == null || data) {
+
+            if (data == null || typeof data.name =='undefined') {
                errInResponse();
                return;
             } else{
-            console.log(data);
+            //console.log(data);
             getUser(new Array(data));
             }
         });

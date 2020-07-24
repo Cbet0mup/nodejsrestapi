@@ -1,12 +1,13 @@
 const express = require('express');
 const Post = require('../models/post');
 const { syncIndexes } = require('../models/post');
+const { json } = require('body-parser');
 const router = express.Router();
 
 // Получаем все записи
 router.get('/', async(req, res) => {
     try{
-        console.log("Получаем все записи");
+        //console.log("Получаем все записи");
         const post = await Post.find();
         
 
@@ -19,7 +20,7 @@ router.get('/', async(req, res) => {
 // Получаем запись из БД по name
 router.get('/:name', async(req, res) => {
     try{
-        console.log('Получаем запись из БД по name ');
+        //console.log('Получаем запись из БД по name ' + req.body.name);
         
        const post = await Post.findOne({name: req.params.name});
         res.json(post);
