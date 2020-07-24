@@ -29,7 +29,7 @@
 <div class="blockRequest">
     <form id="getAllData" class="form">
         <label class="input" for="get all user to DB">Получить список всех объектов</label>    
-        <button class="button input" type="submit">get all user to DB</button>
+        <button class="button input" type="submit">get all user from DB</button>
     </form>
 </div>
 
@@ -37,7 +37,15 @@
     <form id="getUserByName" class="form" method="GET">
         <label class="input" for="userOneName">Получить объект по имени</label>
         <input type="text" name="name" id="userOneName" placeholder="name">
-        <button class="button input" type="submit">get one user to DB</button>
+        <button class="button input" type="submit">get one user from DB</button>
+    </form>
+</div>
+
+<div class="blockRequest">
+    <form id="deleteByName" class="form" method="GET">
+        <label class="input" for="userOneName">Удалить объект по имени</label>
+        <input type="text" name="name" id="deleteUser" placeholder="name">
+        <button class="button input" type="submit">del one user from DB</button>
     </form>
 </div>
 
@@ -55,6 +63,7 @@
     <script src="./script/getUser.js"></script>
     
     <script src="./script/writeNewUser.js"></script>
+    <script src="./script/delete.js"></script>
 
     <script src="./script/getDataByDb.js"></script>
     <script src="./script/err.js"></script>

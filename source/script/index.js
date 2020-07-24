@@ -1,6 +1,7 @@
 const getAllDataUser = document.getElementById('getAllData');
 const writeUser = document.getElementById('writeUser');
 const getUserByOneName = document.getElementById('getUserByName');
+const deleteUserByName = document.getElementById('deleteByName')
 const output = document.getElementById('response');
 //const ulTable = document.getElementById('ul');
 
@@ -65,5 +66,29 @@ getUserByOneName.addEventListener("submit", (e) => {
             }
         });
 
+
+});
+
+deleteUserByName.addEventListener('submit', (e) => {
+    e.preventDefault();
+    output.innerHTML = '';
+    let userName = document.getElementById('deleteUser');
+    let name = userName.value;
+    let uri = getUserUrl + userName.value.trim();  //гибрид адреса и параметра запроса
+
+    delUser(uri)
+        .then(data => {
+            output.innerHTML = '';
+            if(data.deletedCount == 1) {
+            let paragraph = document.createElement('p');
+            paragraph.innerText = 'Объект удалён из БД';
+            output.append(paragraph);
+            } else 
+                {
+                errInResponse();
+                return;
+            }
+    });
+    userName.value = '';
 
 });

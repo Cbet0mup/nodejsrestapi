@@ -1,7 +1,7 @@
 async function writeNewUser(url, data) {
     let user = data;
 
-    const res = await fetch(`${url}`, {
+    const res = await fetch(url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json;charset=utf-8'
