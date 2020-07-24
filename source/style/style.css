@@ -55,6 +55,9 @@ float: left;
     padding: 5px;
     color: red;    
 }
+.update {
+    height: 145px;
+}
 
 #ul {
     margin: 3px;

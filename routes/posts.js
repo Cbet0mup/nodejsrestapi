@@ -32,7 +32,6 @@ router.get('/:name', async(req, res) => {
 
 // отправляем запись в БД согласно заданной модели
 router.post('/', async(req, res) => {
-    console.log('отправляем запись в БД согласно заданной модели');
     const post = new Post({
         name: req.body.name,
         post: req.body.post,
@@ -40,11 +39,9 @@ router.post('/', async(req, res) => {
     });
 
     try{
-    const savedPost = await post.save();
-    res.json(savedPost);
-    } catch(err){
-    console.log('отправляем запись в БД согласно заданной модели');
-        
+        const savedPost = await post.save();
+        res.json(savedPost);
+    } catch(err){        
         res.json({message: err})};
 });
 
@@ -68,8 +65,8 @@ router.patch('/:postID', async(req, res) => {
     try {
         console.log('UPDATE BD')
         const updatePost = await Post.updateOne(
-            {_id: req.params.postID},
-            {$set: {title: req.body.title}}
+            {name: req.params.name},
+            {$set: {title: req.body.title}}  
             );
             res.json(updatePost);
     } catch (error) {
