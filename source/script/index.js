@@ -5,7 +5,7 @@ const deleteUserByName = document.getElementById('deleteByName');
 const updateUserByName = document.getElementById('updateByName');
 const output = document.getElementById('response');
 
-const getUserUrl = "http://127.0.0.1:80/posts/"
+const getUserUrl = "https://mongodbtestcase.herokuapp.com/posts/"; //window.location.host
 
 //**************************  вывести всю базу  ******************************** */
 
