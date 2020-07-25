@@ -1,12 +1,11 @@
-async function writeNewUser(url, data) {
-    let user = data;
-
+async function updateData(url, data){
+    
     const res = await fetch(url, {
-        method: 'POST',
+        method: 'PATCH',
         headers: {
-          'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify(user)
+            'Content-Type': 'application/json;charset=utf-8'
+          },
+        body: JSON.stringify(data)
       });
 
     if(!res.ok){

@@ -1,14 +1,15 @@
 const getAllDataUser = document.getElementById('getAllData');
 const writeUser = document.getElementById('writeUser');
 const getUserByOneName = document.getElementById('getUserByName');
-const deleteUserByName = document.getElementById('deleteByName')
+const deleteUserByName = document.getElementById('deleteByName');
+const updateUserByName = document.getElementById('updateByName');
 const output = document.getElementById('response');
 //const ulTable = document.getElementById('ul');
 
 const getUserUrl = "http://localhost:3000/posts/"
 
-//********************************************************** */
-//вывести всю базу (хе-хе)
+//**************************  вывести всю базу  ******************************** */
+
  getAllDataUser.addEventListener("submit", (e) => {
         e.preventDefault();
         getData(getUserUrl)
@@ -16,8 +17,8 @@ const getUserUrl = "http://localhost:3000/posts/"
             .catch((err)=>{console.log(err)});
      });
 
-/******************************************************************** */
-//запись новго
+/*************************        запись новго  ******************************************* */
+
 writeUser.addEventListener("submit", (e) => {
     e.preventDefault();
     output.innerHTML = '';
@@ -35,7 +36,7 @@ writeUser.addEventListener("submit", (e) => {
         .then(data => {
             output.innerHTML = '';
             let paragraph = document.createElement('p');
-            paragraph.innerText = `Внесён новый объект \n name: ${data.name} \n id: ${data._id}`;
+            paragraph.innerText = `Внесён новый объект \n name: ${data.name} \n post: ${data.post} \n email: ${data.email}`;
             output.append(paragraph);
         });
         //чистим
@@ -44,15 +45,14 @@ writeUser.addEventListener("submit", (e) => {
         email.value = "";
 });
 
-//запрос по имени
+//**************************запрос по имени    ******************************/
 getUserByOneName.addEventListener("submit", (e) => {
     e.preventDefault();
-    //console.log('запрос по имени');
+   
     output.innerHTML = '';
-    let inputUserName = document.getElementById('userOneName');
-    
 
-    let uri = getUserUrl + inputUserName.value.trim();  //гибрид адреса и параметра запроса
+    let userName = document.getElementById('userOneName');
+    let uri = getUserUrl + userName.value.trim();  //гибрид адреса и параметра запроса
 
     getData(uri)
         .then(data => {
@@ -69,11 +69,12 @@ getUserByOneName.addEventListener("submit", (e) => {
 
 });
 
+/**************************************    delete   ********************* */
 deleteUserByName.addEventListener('submit', (e) => {
     e.preventDefault();
     output.innerHTML = '';
+
     let userName = document.getElementById('deleteUser');
-    let name = userName.value;
     let uri = getUserUrl + userName.value.trim();  //гибрид адреса и параметра запроса
 
     delUser(uri)
@@ -90,5 +91,43 @@ deleteUserByName.addEventListener('submit', (e) => {
             }
     });
     userName.value = '';
+
+});
+/**************************************   update     **************** */
+updateUserByName.addEventListener('submit', (e) => {
+    e.preventDefault();
+    output.innerHTML = '';
+
+    let userName = document.getElementById('oldname');
+    let uri = getUserUrl + userName.value.trim();  //гибрид адреса и параметра запроса
+
+    let name = document.getElementById('updatename');
+    let post = document.getElementById('updatepost');
+    let email = document.getElementById('updateemail');
+    
+    let user = {      //объект нового юзверя
+        name: `${name.value.trim()}`,
+        post: `${post.value.trim()}`,
+        email: `${email.value.trim()}`
+    };
+
+    updateData(uri, user)
+        .then(data => {
+            output.innerHTML = '';
+            if (data.nModified == 1) {
+            let paragraph = document.createElement('p');
+            paragraph.innerText = `Объект успешно обновлён.`;
+            output.append(paragraph);
+            } else 
+                {
+                errInResponse();
+                return;
+        }
+});
+
+userName.value = '';
+name.value = '';
+post.value = '';
+email.value = '';
 
 });
