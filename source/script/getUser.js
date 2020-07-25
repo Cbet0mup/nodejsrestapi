@@ -1,6 +1,6 @@
 function getUser(data){
     
-    output.innerHTML = '';
+    resBlockInit();
     
     data.forEach(element => {
         let ul = document.createElement('ul'); 

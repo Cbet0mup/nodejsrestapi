@@ -4,7 +4,6 @@ const getUserByOneName = document.getElementById('getUserByName');
 const deleteUserByName = document.getElementById('deleteByName');
 const updateUserByName = document.getElementById('updateByName');
 const output = document.getElementById('response');
-//const ulTable = document.getElementById('ul');
 
 const getUserUrl = "http://localhost:3000/posts/"
 
@@ -21,7 +20,8 @@ const getUserUrl = "http://localhost:3000/posts/"
 
 writeUser.addEventListener("submit", (e) => {
     e.preventDefault();
-    output.innerHTML = '';
+    resBlockInit();
+
     let name = document.getElementById('username');
     let post = document.getElementById('post');
     let email = document.getElementById('email');
@@ -34,7 +34,6 @@ writeUser.addEventListener("submit", (e) => {
 
     writeNewUser(getUserUrl, user)
         .then(data => {
-            output.innerHTML = '';
             let paragraph = document.createElement('p');
             paragraph.innerText = `Внесён новый объект \n name: ${data.name} \n post: ${data.post} \n email: ${data.email}`;
             output.append(paragraph);
@@ -48,8 +47,7 @@ writeUser.addEventListener("submit", (e) => {
 //**************************запрос по имени    ******************************/
 getUserByOneName.addEventListener("submit", (e) => {
     e.preventDefault();
-   
-    output.innerHTML = '';
+    resBlockInit();
 
     let userName = document.getElementById('userOneName');
     let uri = getUserUrl + userName.value.trim();  //гибрид адреса и параметра запроса
@@ -72,14 +70,13 @@ getUserByOneName.addEventListener("submit", (e) => {
 /**************************************    delete   ********************* */
 deleteUserByName.addEventListener('submit', (e) => {
     e.preventDefault();
-    output.innerHTML = '';
+    resBlockInit();
 
     let userName = document.getElementById('deleteUser');
     let uri = getUserUrl + userName.value.trim();  //гибрид адреса и параметра запроса
 
     delUser(uri)
         .then(data => {
-            output.innerHTML = '';
             if(data.deletedCount == 1) {
             let paragraph = document.createElement('p');
             paragraph.innerText = 'Объект удалён из БД';
@@ -96,7 +93,7 @@ deleteUserByName.addEventListener('submit', (e) => {
 /**************************************   update     **************** */
 updateUserByName.addEventListener('submit', (e) => {
     e.preventDefault();
-    output.innerHTML = '';
+    resBlockInit();
 
     let userName = document.getElementById('oldname');
     let uri = getUserUrl + userName.value.trim();  //гибрид адреса и параметра запроса
@@ -113,7 +110,6 @@ updateUserByName.addEventListener('submit', (e) => {
 
     updateData(uri, user)
         .then(data => {
-            output.innerHTML = '';
             if (data.nModified == 1) {
             let paragraph = document.createElement('p');
             paragraph.innerText = `Объект успешно обновлён.`;
