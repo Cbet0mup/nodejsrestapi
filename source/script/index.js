@@ -5,7 +5,7 @@ const deleteUserByName = document.getElementById('deleteByName');
 const updateUserByName = document.getElementById('updateByName');
 const output = document.getElementById('response');
 
-const getUserUrl = "http://localhost:3000/posts/"
+const getUserUrl = "http://localhost:80/posts/"
 
 //**************************  вывести всю базу  ******************************** */
 
