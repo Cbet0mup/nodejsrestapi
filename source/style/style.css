@@ -4,11 +4,13 @@
   } */
 
 .body {
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(33, 65, 25);
+    background-image: url(/img/fon.jpg);
+    background-blend-mode: overlay;
 }
 
 .head {
-    height: 100px;
+    height: 135px;
     background-color: rgb(25, 27, 24);
     text-align: center;
     color: lime;
@@ -48,11 +50,14 @@ float: left;
     padding-left: 15px;
 }
 .blockRequest {
-    height: 120px;
+    display: table;
+    
+    height: 180px;
     width: 80%;
     border: 1px solid red;
     margin: 10px;
-    padding: 5px;
+    padding: 5px; 
+    padding-left: 10%;
     color: red;    
 }
 .update {

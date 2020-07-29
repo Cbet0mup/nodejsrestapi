@@ -5,7 +5,18 @@ const deleteUserByName = document.getElementById('deleteByName');
 const updateUserByName = document.getElementById('updateByName');
 const output = document.getElementById('response');
 
-const getUserUrl = "http://localhost:3000/posts";//window.location.host;
+
+/***************************   прикол****************** */
+let elem = document.getElementById('elem');
+
+document.addEventListener('mousemove', function(event) {
+	elem.innerHTML = event.clientX + ' : ' + event.clientY;
+});
+
+/***************************   прикол****************** */
+
+
+const getUserUrl = "http://localhost:3000/posts/";//window.location.host;
 //const getUserUrl = "https://mongodbtestcase.herokuapp.com/posts/"; 
 
 //**************************  вывести всю базу  ******************************** */
@@ -53,16 +64,20 @@ getUserByOneName.addEventListener("submit", (e) => {
     let userName = document.getElementById('userOneName');
     let uri = getUserUrl + userName.value.trim();  //гибрид адреса и параметра запроса
 
+    let user = {      //объект нового юзверя
+        name: `${userName.value.trim()}`
+    };
+
     getData(uri)
         .then(data => {
-
-            if (data == null || typeof data.name =='undefined') {
+            //console.log(data.constructor === Array);
+            if (data == null || data.length < 1) {
                errInResponse();
                return;
             } else{
             //console.log(data);
-            getUser(new Array(data));
-            }
+            getUser(data);
+           }
         });
 
 

@@ -8,7 +8,7 @@ async function getData(url){
     if(!res.ok){
         throw new Error(`Could notfetch ${url}, status: ${res.status}`);
     } else {
-    //console.log(res.body);
+    //console.log(res.json());
 
         return await res.json(); 
     }

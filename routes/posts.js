@@ -20,9 +20,9 @@ router.get('/', async(req, res) => {
 // Получаем запись из БД по name
 router.get('/:name', async(req, res) => {
     try{
-        //console.log('Получаем запись из БД по name ' + req.body.name);
+        console.log('Получаем запись из БД по name ' + req.params.name);
         
-       const post = await Post.findOne({name: req.params.name});
+       const post = await Post.find({name: req.params.name});//findOne({name: req.params.name});
         res.json(post);
         
     }catch(err){

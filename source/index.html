@@ -3,35 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/style.css">
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style/style.css">
+    
     <title>crud mongoDB</title>
 </head>
 <body class="body">
     <header class="head">
         <h1>База данных MongoDB</h1>
+        <div id="elem">0 : 0</div>
+        <!-- <h2 contenteditable="true">kdjfkdjfkdj</h2> -->
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand">Navbar</a>
+                 <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                 </form>
+        </nav>
     </header>
 
-    <div class="wrapper">
-        <div class="content">
-        <div class="request">
+    <div class="container-fluid">
+        <div class="row">
+        <div class="request col-md-auto">
 
         <div class="blockRequest">
                 <form id="writeUser" class="form" method="post">
                     <label class="input" for="username">Внести новый объект</label>
                         <input class="input" type="text" name="username" id="username" placeholder="name">
                         <input class="input" type="text" name="post" id="post" placeholder="post">
-                        <input class="input" type="text" name="email" id="email" placeholder="email">
+                        <input class="input" type="email" name="email" id="email" placeholder="name@example.com">
         
-                    <button class="button input" type="submit">write new object</button>
+                    <button class="button input btn btn-primary btn-sm" type="submit">write new object</button>
                 </form>
         </div>
 
 <div class="blockRequest">
     <form id="getAllData" class="form">
         <label class="input" for="get all user to DB">Получить список всех объектов</label>    
-        <button class="button input" type="submit">get all user from DB</button>
+        <button class="button input btn btn-primary btn-sm" type="submit">get all user from DB</button>
     </form>
 </div>
 
@@ -39,7 +49,7 @@
     <form id="getUserByName" class="form" method="GET">
         <label class="input" for="userOneName">Получить объект по имени</label>
         <input type="text" name="name" id="userOneName" placeholder="name">
-        <button class="button input" type="submit">get one user from DB</button>
+        <button class="button input btn btn-primary btn-sm" type="submit">get one user from DB</button>
     </form>
 </div>
 
@@ -47,25 +57,25 @@
     <form id="deleteByName" class="form" method="GET">
         <label class="input" for="deleteUser">Удалить объект по имени</label>
         <input type="text" name="name" id="deleteUser" placeholder="name">
-        <button class="button input" type="submit">del one user from DB</button>
+        <button class="button input btn btn-primary btn-sm" type="submit">del one user from DB</button>
     </form>
 </div>
 
 <div class="blockRequest update">
     <form id="updateByName" class="form" method="GET">
         <label class="input" for="oldname">Редактировать объект по имени</label>
-        <input class="input" type="text" name="username" id="oldname" placeholder="old name">
-        <input class="input" type="text" name="username" id="updatename" placeholder="new name">
-        <input class="input" type="text" name="post" id="updatepost" placeholder="new post">
-        <input class="input" type="text" name="email" id="updateemail" placeholder=" new email">
-        <button class="button input" type="submit">update one user from DB</button>
+        <input class="input form-control-sm" type="text" name="username" id="oldname" placeholder="old name">
+        <input class="input form-control-sm" type="text" name="username" id="updatename" placeholder="new name">
+        <input class="input form-control-sm" type="text" name="post" id="updatepost" placeholder="new post">
+        <input class="input form-control-sm" type="email" name="email" id="updateemail" placeholder="name@example.com">
+        <button class="button input btn btn-primary btn-sm" type="submit">update one user from DB</button>
     </form>
 </div>
 
 </div>
     
     
-    <div id="response" class="response text">
+    <div id="response" class="response col-md-auto">
         <!-- <table>
             <thead>
                 <tr>
