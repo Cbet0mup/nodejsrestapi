@@ -5,8 +5,6 @@ function getTable(){
     table.classList.add('table-dark');
     table.classList.add('table-hover');
 
-
-
     const thead = document.createElement('thead');
     const tr = document.createElement('tr');
     tr.classList.add('table-active');
