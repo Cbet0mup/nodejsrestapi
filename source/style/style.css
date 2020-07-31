@@ -33,7 +33,7 @@ a {
     text-shadow: 3px 2px 5px lawngreen, 0 0 1em red;
 }
 
-.text, p {
+.text p {
     font-family: Verdana, Arial, Helvetica, sans-serif;
     color: lime;
     line-height: 1.5;
