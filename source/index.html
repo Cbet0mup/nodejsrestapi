@@ -11,13 +11,13 @@
     <title>crud mongoDB</title>
 </head>
 <body class="body container">
-    <header class="container sticky-top">
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #1e5c1996;">
+  <header class="container">      <!-- sticky-top -->
+        <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #1e5c1996;">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-              <a class="navbar-brand" href="/">
+              <a class="navbar-brand text-white" href="/">
                 <svg width="2em" height="1em" viewBox="0 0 16 16" class="bi bi-tools" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M0 1l1-1 3.081 2.2a1 1 0 0 1 .419.815v.07a1 1 0 0 0 .293.708L10.5 9.5l.914-.305a1 1 0 0 1 1.023.242l3.356 3.356a1 1 0 0 1 0 1.414l-1.586 1.586a1 1 0 0 1-1.414 0l-3.356-3.356a1 1 0 0 1-.242-1.023L9.5 10.5 3.793 4.793a1 1 0 0 0-.707-.293h-.071a1 1 0 0 1-.814-.419L0 1zm11.354 9.646a.5.5 0 0 0-.708.708l3 3a.5.5 0 0 0 .708-.708l-3-3z"/>
                     <path fill-rule="evenodd" d="M15.898 2.223a3.003 3.003 0 0 1-3.679 3.674L5.878 12.15a3 3 0 1 1-2.027-2.027l6.252-6.341A3 3 0 0 1 13.778.1l-2.142 2.142L12 4l1.757.364 2.141-2.141zm-13.37 9.019L3.001 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026z"/>
@@ -25,13 +25,13 @@
                 MongoDB</a>
               <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Внести</a>
+                  <a class="nav-link text-white" href="#">Внести</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Удалить</a>
+                  <a class="nav-link text-white" href="#">Удалить</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Найти</a>
+                    <a class="nav-link text-white" href="#">Найти</a>
                 </li>
               </ul>
               <!-- <form class="form-inline my-2 my-lg-0">
@@ -44,59 +44,28 @@
 
     <div class="container-fluid">
         <div class="row">
-        <div class="request col-md-auto">
-
-        <div class="blockRequest" hidden="true">
-                <form role="form" id="writeUser" class="form" method="post">
-                    <div class="form-group">
-                        <label class="input control-label" for="username">Внести новый объект</label>
-                        <input class="input form-control" type="text" name="username" id="username" placeholder="name">
-                        <input class="input form-control" type="text" name="post" id="post" placeholder="post">
-                        <input class="input form-control" type="email" name="email" id="email" placeholder="name@example.com">
-        
-                    <button class="button input btn btn-primary btn-sm" type="submit">write new object</button>
-                </div>
-                </form>
+            <div class="request col-md-auto">
+                    
+    
+            </div>
         </div>
-
-<div class="blockRequest">
-    <form role="form" id="getAllData" class="form">
-        <label class="input control-label" for="get all user to DB">Получить список всех объектов</label>    
-        <button class="button input btn btn-primary btn-lg" type="submit">get</button>
-    </form>
-</div>
-
-<div class="blockRequest" hidden="true">
-    <form role="form" id="getUserByName" class="form" method="GET">
-        <label class="input control-label" for="userOneName">Получить объект по имени</label>
-        <input class="input form-control" type="text" name="name" id="userOneName" placeholder="name">
-        <button class="button input btn btn-primary btn-sm" type="submit">get one user from DB</button>
-    </form>
-</div>
-
-<div class="blockRequest" hidden="true">
-    <form role="form" id="deleteByName" class="form" method="GET">
-        <label class="input control-label" for="deleteUser">Удалить объект по имени</label>
-        <input class="input form-control" type="text" name="name" id="deleteUser" placeholder="name">
-        <button class="button input btn btn-primary btn-sm" type="submit">del one user from DB</button>
-    </form>
-</div>
-
-<div class="blockRequest update" hidden="true">
-    <form role="form" id="updateByName" class="form" method="GET">
-        <label class="input control-label" for="oldname">Редактировать объект по имени</label>
-        <input class="input form-control-sm" type="text" name="username" id="oldname" placeholder="old name">
-        <input class="input form-control-sm" type="text" name="username" id="updatename" placeholder="new name">
-        <input class="input form-control-sm" type="text" name="post" id="updatepost" placeholder="new post">
-        <input class="input form-control-sm" type="email" name="email" id="updateemail" placeholder="name@example.com">
-        <button class="button input btn btn-primary btn-sm" type="submit">update one user from DB</button>
-    </form>
-</div>
-
-</div>
-</div>
 <div class="row">
     <div id="response" class="response col-md-12"></div>
+
+      <nav class="page" aria-label="Page navigation example">
+        <ul class="pagination justify-content-rigth">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">&leftthreetimes; Previous</a>
+          </li>
+          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next &rightsquigarrow;</a>
+          </li>
+        </ul>
+    </nav>
+  
 </div>
 
 

@@ -4,18 +4,13 @@
   } */
 
 .body {
-    background-color: rgb(33, 65, 25);
+    background-color: rgb(51, 59, 49);
     background-image: url(/img/fon.jpg);
     background-blend-mode: overlay;
 }
 
-.head {
-    height: 80px;
-    background-color: rgb(25, 27, 24);
-    text-align: center;
-    color: lime;
-    
-    
+.page {
+    display: none;
 }
 
 /* .input {
@@ -29,8 +24,8 @@
 } */
 a {
     font-size: x-large;
-    font-weight: 700;
-    text-shadow: 3px 2px 5px lawngreen, 0 0 1em red;
+    font-weight: 900;
+    text-shadow: 3px 2px 6px lawngreen, 0 0 1em rgb(10, 3, 3);
 }
 
 .text p {

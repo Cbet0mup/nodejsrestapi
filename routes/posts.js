@@ -10,7 +10,6 @@ router.get('/', async(req, res) => {
         //console.log("Получаем все записи");
         const post = await Post.find();
         
-
         res.json(post);
     }catch(err){
         res.json({message: err});

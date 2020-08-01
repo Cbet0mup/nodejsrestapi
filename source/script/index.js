@@ -1,4 +1,4 @@
-const getAllDataUser = document.getElementById('getAllData');
+//const getAllDataUser = document.getElementById('getAllData');
 const writeUser = document.getElementById('writeUser');
 const getUserByOneName = document.getElementById('getUserByName');
 const deleteUserByName = document.getElementById('deleteByName');
@@ -9,14 +9,20 @@ const output = document.getElementById('response');
 const getUserUrl = "http://localhost:3000/posts/";//window.location.host;
 //const getUserUrl = "https://mongodbtestcase.herokuapp.com/posts/"; 
 
-//**************************  вывести всю базу  ******************************** */
+//**************************  вывести всю базу при загрузке страницы ******************************** */
 
- getAllDataUser.addEventListener("submit", (e) => {
-        e.preventDefault();
-        getData(getUserUrl)
+document.addEventListener("DOMContentLoaded", function(){
+    getData(getUserUrl)
             .then(data => getUser(data))
             .catch((err)=>{console.log(err)});
-     });
+});
+
+//  getAllDataUser.addEventListener("submit", (e) => {
+//         e.preventDefault();
+//         getData(getUserUrl)
+//             .then(data => getUser(data))
+//             .catch((err)=>{console.log(err)});
+//      });
 
 /*************************        запись новго  ******************************************* */
 
