@@ -6,23 +6,13 @@ const updateUserByName = document.getElementById('updateByName');
 const output = document.getElementById('response');
 
 
-const getUserUrl = "http://localhost:3000/posts/";//window.location.host;
-//const getUserUrl = "https://mongodbtestcase.herokuapp.com/posts/"; 
-
-//**************************  вывести всю базу при загрузке страницы ******************************** */
+//**************************  вывести базу при загрузке страницы,дефолт: лимит 10 стр 1 ******************************** */
 
 document.addEventListener("DOMContentLoaded", function(){
-    getData(getUserUrl)
+    getData(mongoUri)
             .then(data => getUser(data))
             .catch((err)=>{console.log(err)});
 });
-
-//  getAllDataUser.addEventListener("submit", (e) => {
-//         e.preventDefault();
-//         getData(getUserUrl)
-//             .then(data => getUser(data))
-//             .catch((err)=>{console.log(err)});
-//      });
 
 /*************************        запись новго  ******************************************* */
 
