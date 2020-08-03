@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 require('dotenv/config');  // скрытая херня с секретными данными login/pass
 
+
 app.use(bodyParser.json());
 // Import Routes
 const postRoute = require('./routes/posts');

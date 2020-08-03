@@ -4,7 +4,7 @@ function getUser(data){
     getTable();
     let tbody = document.getElementById('tbody');
     
-    data.forEach(element => {
+    data.docs.forEach(element => {
         const tr = document.createElement('tr');
         let th1 = document.createElement('td');
         let th2 = document.createElement('td');
@@ -17,7 +17,6 @@ function getUser(data){
         tr.appendChild(th1);
         tr.appendChild(th2);
         tr.appendChild(th3);
-
 
         tbody.appendChild(tr);
         
