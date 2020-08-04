@@ -17,7 +17,7 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-              <a class="navbar-brand text-white" href="/">
+              <a class="navbar-brand aaa text-white" href="/">
                 <svg width="2em" height="1em" viewBox="0 0 16 16" class="bi bi-tools" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M0 1l1-1 3.081 2.2a1 1 0 0 1 .419.815v.07a1 1 0 0 0 .293.708L10.5 9.5l.914-.305a1 1 0 0 1 1.023.242l3.356 3.356a1 1 0 0 1 0 1.414l-1.586 1.586a1 1 0 0 1-1.414 0l-3.356-3.356a1 1 0 0 1-.242-1.023L9.5 10.5 3.793 4.793a1 1 0 0 0-.707-.293h-.071a1 1 0 0 1-.814-.419L0 1zm11.354 9.646a.5.5 0 0 0-.708.708l3 3a.5.5 0 0 0 .708-.708l-3-3z"/>
                     <path fill-rule="evenodd" d="M15.898 2.223a3.003 3.003 0 0 1-3.679 3.674L5.878 12.15a3 3 0 1 1-2.027-2.027l6.252-6.341A3 3 0 0 1 13.778.1l-2.142 2.142L12 4l1.757.364 2.141-2.141zm-13.37 9.019L3.001 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026z"/>
@@ -25,13 +25,13 @@
                 MongoDB</a>
               <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="#">Внести</a>
+                  <a class="nav-link aaa text-white" href="#">Внести</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="#">Удалить</a>
+                  <a class="nav-link aaa text-white" href="#">Удалить</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Найти</a>
+                    <a class="nav-link aaa text-white" href="#">Найти</a>
                 </li>
               </ul>
               <!-- <form class="form-inline my-2 my-lg-0">
@@ -45,23 +45,25 @@
     <div class="container-fluid">
         <div class="row">
             <div class="request col-md-auto">
-                    
+                    <p>fdfgdfgdfg</p>
     
             </div>
         </div>
+    </div>
+
 <div class="row">
-    <div id="response" class="response col-md-12"></div>
+    <div id="response" class="response contaner col-md-12"></div>
 
       <nav class="page" aria-label="Page navigation example">
-        <ul class="pagination justify-content-rigth">
-          <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">&leftthreetimes; Previous</a>
-          </li>
-          <li class="page-item active"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <ul id="ulPag" class="pagination pagination-sm justify-content-center">
           <li class="page-item">
-            <a class="page-link" href="#">Next &rightsquigarrow;</a>
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+          </li>
+          <!-- <li class="page-item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li> -->
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
           </li>
         </ul>
     </nav>
@@ -70,22 +72,25 @@
 
 
 <footer class="footer fixed-bottom" style="text-align: center;">все права защищены</footer>
-</div>
-    <script src="./config/app.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     
     <script src="./script/index.js"></script>
-
-    <script src="./script/getUser.js"></script>
+    <script src="./config/app.js"></script>
     <script src="./script/resinit.js"></script>
+
+    <script src="./script/table.js"></script>
+
+    <script src="./script/getDataByDb.js"></script>
+    <script src="./script/getUser.js"></script>
+
+    <script src="./script/pagination.js"></script>
+
     <script src="./script/writeNewUser.js"></script>
     <script src="./script/delete.js"></script>
     <script src="./script/update.js"></script>
-    <script src="./script/table.js"></script>
-    <script src="./script/getDataByDb.js"></script>
     <script src="./script/err.js"></script>
 
 </body>

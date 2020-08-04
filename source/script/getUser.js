@@ -1,9 +1,13 @@
 function getUser(data){
-    
+    const totalPages = data.totalPages,
+        page = data.page,
+        hasPrevPage = data.hasPrevPage,
+        hasNextPage = data.hasNextPage;
+
     resBlockInit();
     getTable();
     let tbody = document.getElementById('tbody');
-    
+
     data.docs.forEach(element => {
         const tr = document.createElement('tr');
         let th1 = document.createElement('td');
@@ -21,6 +25,8 @@ function getUser(data){
         tbody.appendChild(tr);
         
     });
+
+    pagination(totalPages, page, hasPrevPage, hasNextPage);
 
     //******************************************** */
     

@@ -9,7 +9,7 @@ const output = document.getElementById('response');
 //**************************  вывести базу при загрузке страницы,дефолт: лимит 10 стр 1 ******************************** */
 
 document.addEventListener("DOMContentLoaded", function(){
-    getData(mongoUri)
+    getData(mongoUri + paramRequest)
             .then(data => getUser(data))
             .catch((err)=>{console.log(err)});
 });
