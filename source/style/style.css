@@ -4,9 +4,9 @@
     background-blend-mode: overlay;
 }
 
-.page {
+/* .page {
     display: inline;
-}
+} */
 
 .aaa {
     font-size: x-large;
@@ -21,20 +21,11 @@
     font-weight: 500;
     padding-left: 15px;
 }
-/* .blockRequest {
-    
-    border: 1px solid red;
-    margin: 10px;
-    padding: 5px; 
-    padding-left: 30px;
-    padding-right: 30px;
-    color: red;    
-} */
 
 .navbar-text {
     color: rgba(255, 255, 255, 0.8);
 }
 
 .response {
-    margin: 20px;
+    margin-top: 50px;
 }

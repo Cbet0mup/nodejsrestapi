@@ -10,8 +10,8 @@
     
     <title>crud mongoDB</title>
 </head>
-<body class="body container">
-  <header class="container">      <!-- sticky-top -->
+<body class="body">
+  <header class="container-fluid">    
         <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #1e5c1996;">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -34,38 +34,39 @@
                     <a class="nav-link aaa text-white" href="#">Найти</a>
                 </li>
               </ul>
-              <!-- <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form> -->
             </div>
           </nav>
-    </header>
-
-    <div class="container-fluid">
-        <div class="row">
+  </header>
+    <!-- -fluid -->
+    <!-- <div class="row"> 
+        <div class="d-flex flex-row">
             <div class="request col-md-auto">
                     <p>fdfgdfgdfg</p>
     
             </div>
         </div>
-    </div>
-
-<div class="row">
-    <div id="response" class="response contaner col-md-12"></div>
-
-      <nav class="page" aria-label="Page navigation example">
-        <ul id="ulPag" class="pagination pagination-sm justify-content-center">
-          <!-- <li class="page-item">
-            <a class="page-link" href="#" tabindex="-1" aria-disabled="true" id="hasPrev" onclick="pagEvent('hasPrev');">Previous</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link active" href="#" id="hasNext" onclick="pagEvent('hasNext');">Next</a>
-          </li> -->
-        </ul>
-    </nav>
+    </div> -->
+<div class="container-fluid">
+  <div class="row">
   
+    <div id="response" class="response col-md-12"></div>
+
+        
+  </div>
 </div>
+
+  <!--  -->
+    <div class="row">
+      <div class="col-md-12">
+        <nav aria-label="Page navigation example">
+          <ul id="ulPag" class="pagination pagination-sm justify-content-center">
+            
+          </ul>
+        </nav>
+     </div>
+    </div>
+  <!--  -->
+  
 
 
 <footer class="footer fixed-bottom" style="text-align: center;">все права защищены</footer>
