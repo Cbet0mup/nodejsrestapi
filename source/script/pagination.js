@@ -1,4 +1,4 @@
-function pagination(totalPages, currentPage, hasPrevPage, hasNextPage) {
+function pagination(totalPages, currentPage) {
 
     function pagEvent(param) // замыкание
     {   
