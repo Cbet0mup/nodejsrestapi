@@ -1,6 +1,6 @@
 // Get DATA
 
-async function getData(url){
+async function getDataByDB(url){
     //console.log(url);
 
     const res = await fetch(url);

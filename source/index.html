@@ -23,14 +23,14 @@
                     <path fill-rule="evenodd" d="M15.898 2.223a3.003 3.003 0 0 1-3.679 3.674L5.878 12.15a3 3 0 1 1-2.027-2.027l6.252-6.341A3 3 0 0 1 13.778.1l-2.142 2.142L12 4l1.757.364 2.141-2.141zm-13.37 9.019L3.001 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026z"/>
                   </svg>
                 MongoDB</a>
-              <!-- <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+              <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link aaa text-white" href="#">Внести</a>
+                  <a class="nav-link aaa text-white" id="addNewData" href="#">Добавить</a>
                 </li>
-                <li class="nav-item">
+                <!--<li class="nav-item">
                   <a class="nav-link aaa text-white" href="#">Удалить</a>
                 </li>
-                <li class="nav-item">
+                 <li class="nav-item">
                     <a class="nav-link aaa text-white" href="#">Найти</a>
                 </li>
               </ul> -->
@@ -38,14 +38,26 @@
           </nav>
   </header>
     <!-- -fluid -->
-    <!-- <div class="row"> 
-        <div class="d-flex flex-row">
-            <div class="request col-md-auto">
-                    <p>fdfgdfgdfg</p>
-    
+    <div class="row"> 
+        <div class="container request" style="display: none;" id="request">
+          <form id="writeUser">
+            <div class="col-md-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Имя, Должность, Email</span>
+                </div>
+                <input type="text" aria-label="Name" id="username" class="form-control">
+                <input type="text" aria-label="Post" id="post" class="form-control">
+                <input type="text" type="email" aria-label="Email" id="email" class="form-control">
+                <input class="btn btn-success" type="submit" value="Submit">
+              </div>    
             </div>
+          </form>
         </div>
-    </div> -->
+        <div class="container" style="display: none;" id="message">
+
+        </div>
+    </div>
 <div class="container-fluid">
   <div class="row">
   
@@ -87,6 +99,7 @@
     <script src="./script/pagination.js"></script>
 
     <script src="./script/writeNewUser.js"></script>
+    <script src="./script/addInfoGetTable.js"></script>
     <script src="./script/delete.js"></script>
     <script src="./script/update.js"></script>
     <script src="./script/err.js"></script>

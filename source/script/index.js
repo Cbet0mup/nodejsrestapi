@@ -1,17 +1,22 @@
-//const getAllDataUser = document.getElementById('getAllData');
+const getTableToWriteNewData = document.getElementById('addNewData');
 const writeUser = document.getElementById('writeUser');
 const getUserByOneName = document.getElementById('getUserByName');
 const deleteUserByName = document.getElementById('deleteByName');
 const updateUserByName = document.getElementById('updateByName');
 const output = document.getElementById('response');
+const request = document.getElementById('request');
 
-
+function dataByDB(){
+    getDataByDB(mongoUri + pageLimit + getPageNum(1))
+            .then(data => getUser(data))
+            .catch((err)=>{console.log(err)});
+}
 //**************************  вывести базу при загрузке страницы,дефолт: лимит 10 стр 1 ******************************** */
 
 document.addEventListener("DOMContentLoaded", function(){
-        getData(mongoUri + pageLimit + getPageNum(1))
-            .then(data => getUser(data))
-            .catch((err)=>{console.log(err)});
+
+    getTableToWriteNewData.addEventListener('click', e => addInfoGetTable(e));
+    dataByDB();
 });
 
 /*************************        запись новго  ******************************************* */
@@ -30,7 +35,7 @@ writeUser.addEventListener("submit", (e) => {
         email: `${email.value.trim()}`
     };
 
-    writeNewUser(getUserUrl, user)
+    writeNewUser(mongoUri, user)
         .then(data => {
             let paragraph = document.createElement('p');
             paragraph.innerText = `Внесён новый объект \n name: ${data.name} \n post: ${data.post} \n email: ${data.email}`;
@@ -40,6 +45,7 @@ writeUser.addEventListener("submit", (e) => {
         name.value = "";
         post.value = "";
         email.value = "";
+        
 });
 
 //**************************запрос по имени    ******************************/
@@ -54,7 +60,7 @@ getUserByOneName.addEventListener("submit", (e) => {
         name: `${userName.value.trim()}`
     };
 
-    getData(uri)
+    getDataByDB(uri)
         .then(data => {
             //console.log(data.constructor === Array);
             if (data == null || data.length == 0) {
