@@ -1,6 +1,7 @@
 function getUser(data){
     const totalPages = data.totalPages,
         page = data.page;
+        console.log(data)
 
     resBlockInit();
     getTable();
