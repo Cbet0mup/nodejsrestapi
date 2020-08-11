@@ -7,7 +7,7 @@ function getUser(data){
     let tbody = document.getElementById('tbody');
 
     data.docs.forEach(element => {
-        const tr = document.createElement('tr');
+         const tr = document.createElement('tr');
 
         tr.innerHTML = `<tr>
         <td>${element.name}</td>

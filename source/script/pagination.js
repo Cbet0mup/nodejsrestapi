@@ -1,21 +1,20 @@
 function pagination(totalPages, currentPage) {
 
     function pagEvent(param) // замыкание
-    {   
-        let number = param;
-        if(number == "hasPrev"){
-            if(currentPage > 1) number = currentPage - 1;
-                else number = 1;
+    {                       // реализуем работу стрелочек в пагинации
+        let numberPage = param;
+        if(numberPage == "hasPrev"){
+            if(currentPage > 1) numberPage = currentPage - 1;
+                else numberPage = 1;
         }
-            else if(number == "hasNext"){
-                if(currentPage < 4) number = currentPage + 1;
-                    else number = 4;
+            else if(numberPage == "hasNext"){
+                if(currentPage < 4) numberPage = currentPage + 1;
+                    else numberPage = 4;
             }            
 
         document.getElementById('ulPag').innerHTML = "";
-        getData(mongoUri + pageLimit + getPageNum(number))
-        .then(data => getUser(data))
-        .catch((err)=>{console.log(err)});
+        
+        dataByDB(numberPage);
 
     };
 /*******************   создадим блок нумерации   *********** */    

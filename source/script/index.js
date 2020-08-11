@@ -5,18 +5,19 @@ const deleteUserByName = document.getElementById('deleteByName');
 const updateUserByName = document.getElementById('updateByName');
 const output = document.getElementById('response');
 const request = document.getElementById('request');
+const paginationRowInit = document.getElementById('ulPag');
 
-function dataByDB(){
-    getDataByDB(mongoUri + pageLimit + getPageNum(1))
+function dataByDB(num){
+    getDataByDB(mongoUri + pageLimit + getPageNum(num))
             .then(data => getUser(data))
             .catch((err)=>{console.log(err)});
 }
-//**************************  вывести базу при загрузке страницы,дефолт: лимит 10 стр 1 ******************************** */
+//**************************  вывести базу при загрузке страницы,дефолт: лимит 5 стр 1 ******************************** */
 
 document.addEventListener("DOMContentLoaded", function(){
 
     getTableToWriteNewData.addEventListener('click', e => addInfoGetTable(e));
-    dataByDB();
+    dataByDB(1);
 });
 
 /*************************        запись новго  ******************************************* */
@@ -37,14 +38,14 @@ writeUser.addEventListener("submit", (e) => {
 
     writeNewUser(mongoUri, user)
         .then(data => {
-            let paragraph = document.createElement('p');
-            paragraph.innerText = `Внесён новый объект \n name: ${data.name} \n post: ${data.post} \n email: ${data.email}`;
-            output.append(paragraph);
+            getMessage(data);
+            
         });
         //чистим
         name.value = "";
         post.value = "";
         email.value = "";
+        paginationRowInit.innerHTML = '';
         
 });
 

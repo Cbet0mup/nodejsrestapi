@@ -13,11 +13,10 @@ const router = express.Router();
 router.get('/', async(req, res) => {
     try{     
         //    let page = 0,
-        const limit = req.query.limit || 10;
+        const limit = req.query.limit || 5;
         const page = req.query.page || 1;
 
-         const post = await Post.paginate({},{limit, page});
-        //.find() 
+         const post = await Post.paginate({},{limit, page})
         
         res.json(post);
     }catch(err){

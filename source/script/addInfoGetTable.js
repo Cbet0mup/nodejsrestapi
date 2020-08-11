@@ -1,4 +1,5 @@
 //выведем форму добавления на экран
+const messageBlock = document.getElementById('messageBlock');
 const message = document.getElementById('message');
 
 function addInfoGetTable(e) {
@@ -7,12 +8,14 @@ function addInfoGetTable(e) {
         request.style.display = 'block';
 }
 
-function getMessage() {
+function getMessage(data) {
     request.style.display = 'none';
-    message.style.display = 'block';
+    messageBlock.style.display = 'block';
+    message.innerHTML = `Новый объект успешно внесён.`
     setTimeout(() => {
-    message.style.display = 'none';
-    dataByDB();
+    messageBlock.style.display = 'none';
+    resBlockInit();
+    dataByDB(1);
 
     }, 2000)
 }

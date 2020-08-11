@@ -1,4 +1,7 @@
+// 
+// 
 
 function resBlockInit(){
-    return output.innerHTML = '';
+   return output.innerHTML = '';
+
 }
