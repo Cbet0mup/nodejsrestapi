@@ -44,18 +44,19 @@
             <div class="col-md-12">
               <div class="input-group">
                 <div class="input-group-prepend">
-                  <span class="input-group-text">Имя, Должность, Email</span>
+                  <span class="input-group-text">Добавить</span>
                 </div>
-                <input type="text" aria-label="Name" id="username" class="form-control">
-                <input type="text" aria-label="Post" id="post" class="form-control">
-                <input type="text" type="email" aria-label="Email" id="email" class="form-control">
-                <input class="btn btn-success" type="submit" value="Submit">
+                <input type="text" aria-label="Name" id="username" class="form-control" placeholder="Имя">
+                <input type="text" aria-label="Post" id="post" class="form-control" placeholder="Должность">
+                <input type="text" type="email" aria-label="Email" id="email" class="form-control" placeholder="example@mail.com">
+                <input class="btn btn-success" type="submit" value="Отправить">
+                <input class="btn btn-danger" type="button" id="disableButton" value="Отмена">
               </div>    
             </div>
           </form>
         </div>
         <div class="container" style="display: none;" id="messageBlock">
-          <div class="alert alert-success" role="alert">
+          <div class="alert alert-success" role="alert" id="alert">
             <h4 id="message" class="alert-heading"></h4>
           </div>
         </div>
@@ -99,10 +100,13 @@
     <script src="./script/getUser.js"></script>
 
     <script src="./script/pagination.js"></script>
+    <script src="./script/redactorOneClickTr.js"></script>
 
     <script src="./script/writeNewUser.js"></script>
+    <script src="./script/showBlockInput.js"></script>
     <script src="./script/addInfoGetTable.js"></script>
     <script src="./script/delete.js"></script>
+    <script src="./script/getMessage.js"></script>
     <script src="./script/update.js"></script>
     <script src="./script/err.js"></script>
 

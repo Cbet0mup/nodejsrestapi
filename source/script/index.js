@@ -4,11 +4,10 @@ const getUserByOneName = document.getElementById('getUserByName');
 const deleteUserByName = document.getElementById('deleteByName');
 const updateUserByName = document.getElementById('updateByName');
 const output = document.getElementById('response');
-const request = document.getElementById('request');
 const paginationRowInit = document.getElementById('ulPag');
 
 function dataByDB(num){
-    getDataByDB(mongoUri + pageLimit + getPageNum(num))
+    getDataByDB(MONGOURI + pageLimit + getPageNum(num))
             .then(data => getUser(data))
             .catch((err)=>{console.log(err)});
 }
@@ -21,33 +20,7 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 /*************************        запись новго  ******************************************* */
-
-writeUser.addEventListener("submit", (e) => {
-    e.preventDefault();
-    resBlockInit();
-
-    let name = document.getElementById('username');
-    let post = document.getElementById('post');
-    let email = document.getElementById('email');
-    
-    let user = {      //объект нового юзверя
-        name: `${name.value.trim()}`,
-        post: `${post.value.trim()}`,
-        email: `${email.value.trim()}`
-    };
-
-    writeNewUser(mongoUri, user)
-        .then(data => {
-            getMessage(data);
-            
-        });
-        //чистим
-        name.value = "";
-        post.value = "";
-        email.value = "";
-        paginationRowInit.innerHTML = '';
-        
-});
+writeUser.addEventListener("submit", (e) => { writeNewUserToDb(e)});
 
 //**************************запрос по имени    ******************************/
 getUserByOneName.addEventListener("submit", (e) => {
