@@ -39,6 +39,8 @@
   </header>
     <!-- -fluid -->
     <div class="row"> 
+                            <!-- внести новый -->
+
         <div class="container request" style="display: none;" id="request">
           <form id="writeUser">
             <div class="col-md-12">
@@ -55,6 +57,25 @@
             </div>
           </form>
         </div>
+                      <!-- обновить -->
+        <div class="container request" style="display: none;" id="update">
+          <form id="updateByiD">
+            <div class="col-md-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Обновить</span>
+                </div>
+                <input type="text" aria-label="Id" id="_id" class="form-control" value="" disabled> 
+                <input type="text" aria-label="Name" id="usernameUp" class="form-control" value="">
+                <input type="text" aria-label="Post" id="postUp" class="form-control" value="">
+                <input type="text" type="email" aria-label="Email" id="emailUp" class="form-control"value="">
+                <input class="btn btn-success" type="submit" value="Отправить">
+                <input class="btn btn-danger" type="button" id="disableButtonUp" value="Отмена">
+              </div>    
+            </div>
+          </form>
+        </div>
+
         <div class="container" style="display: none;" id="messageBlock">
           <div class="alert alert-success" role="alert" id="alert">
             <h4 id="message" class="alert-heading"></h4>
@@ -94,7 +115,7 @@
     <script src="./config/app.js"></script>
     <script src="./script/resinit.js"></script>
 
-    <script src="./script/table.js"></script>
+    <script src="./script/getTable.js"></script>
 
     <script src="./script/getDataByDb.js"></script>
     <script src="./script/getUser.js"></script>

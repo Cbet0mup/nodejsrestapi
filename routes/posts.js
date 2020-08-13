@@ -66,10 +66,12 @@ router.delete('/:name', async(req, res) => {
 
 //UPDATE BD
 
-router.patch('/:name', async(req, res) => {
+router.patch('/:id', async(req, res) => {
     try {
+  console.log(req.params.id);
+
         const updatePost = await Post.updateOne(
-            {name: req.params.name},
+            {_id: req.params.id},
             {$set: {
                 name: req.body.name,
                 post: req.body.post,

@@ -1,3 +1,4 @@
+
 function writeNewUserToDb(e){
     e.preventDefault();
     resBlockInit();
@@ -12,46 +13,44 @@ function writeNewUserToDb(e){
       email: `${email.value.trim()}`
   };
 
-    validator(user.name, user.post, user.email, user);  //проверяем чё там навводили
+      //проверяем чё там навводили
+       if(validator(user.name, user.post, user.email)){
+          //чистим
+          name.value = "";
+          post.value = "";
+          email.value = "";
+          paginationRowInit.innerHTML = '';  // чтоб стрелки не дублировались
 
-    
-
-    
-        //чистим
-        name.value = "";
-        post.value = "";
-        email.value = "";
-        paginationRowInit.innerHTML = '';  // чтоб стрелки не дублировались
-        
+          writeNewUser(MONGOURI, user)
+            .then(() => {getMessage(true);});
+    } else getMessage(false);
 }
 
+function validator(name, post, email){
+    
+    if(name !== '' && post !== '' && testMail(email)) {
+      return true;
+    }  else return false;
+}
 
+function testMail(mail) {
+  let reg = /^[\w]{1}[\w-\.]*@[\w-]+\.[a-z]{2,4}$/i;
+  return reg.test(mail) ? true: false;
+}
 
 async function writeNewUser(url, data) {
     
-    const res = await fetch(url, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify(data)
-      });
+  const res = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8'
+      },
+      body: JSON.stringify(data)
+    });
 
-    if(!res.ok){
-        throw new Error(`Could notfetch ${url}, status: ${res.status}`);
-    } else {
-        return await res.json(); 
-    }
-}
-
-function validator(name, post, email, user){
-    
-    if(name !== '' && post !== '' && email !== '') {
-      writeNewUser(MONGOURI, user)
-      .then(data => {
-          //console.log(data);
-          getMessage(true);
-          
-      });
-    }  else getMessage(false);
+  if(!res.ok){
+      throw new Error(`Could notfetch ${url}, status: ${res.status}`);
+  } else {
+      return await res.json(); 
+  }
 }

@@ -12,8 +12,8 @@ function getUser(data){
          tr.setAttribute('data-name', `${element.name}`);
          tr.setAttribute('data-post', `${element.post}`);
          tr.setAttribute('data-email', `${element.email}`);
-//console.log(element)
-        tr.innerHTML = `
+
+         tr.innerHTML = `
         <td>${element.name}</td>
         <td>${element.post}</td>
         <td>${element.email}</td>`;

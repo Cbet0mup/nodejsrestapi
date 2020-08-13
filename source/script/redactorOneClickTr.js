@@ -5,5 +5,18 @@ function redactorOneClickTr(elemId){
     let post = elem.getAttribute('data-post');
     let email = elem.getAttribute('data-email');
     
-    console.log(id)
+    showBlockUpdate()
+
+    let idVal = document.getElementById('_id');
+    let nameVal = document.getElementById('usernameUp');
+    let postVal = document.getElementById('postUp');
+    let emailVal = document.getElementById('emailUp');
+                            // формируем форму с данными объекта
+    idVal.value = id;
+    nameVal.value = name;
+    postVal.value = post;
+    emailVal.value = email;
+    
+   // console.log(id)
 }
+
