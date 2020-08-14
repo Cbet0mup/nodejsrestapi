@@ -22,6 +22,7 @@ function updateUser(e) {
     post.value = "";
     email.value = "";
     paginationRowInit.innerHTML = '';  // чтоб стрелки не дублировались
+    
     updateData(uri, user)
       .then(res => {
         if (res.nModified == 1) {

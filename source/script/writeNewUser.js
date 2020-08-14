@@ -1,7 +1,7 @@
 
 function writeNewUserToDb(e){
     e.preventDefault();
-    resBlockInit();
+    //resBlockInit();
 
     let name = document.getElementById('username');
     let post = document.getElementById('post');

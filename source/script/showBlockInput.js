@@ -14,9 +14,10 @@ const disableButtonUpdater = document.getElementById('disableButtonUp');
 
 function showBlockInput() {
     request.style.display = 'block';
-    
+    update.style.display = 'none';
 }
 
 function showBlockUpdate() {
+    request.style.display = 'none';
     update.style.display = 'block';
 }
