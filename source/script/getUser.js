@@ -5,7 +5,7 @@ function getUser(data){
     resBlockInit();
     getTable();
     let tbody = document.getElementById('tbody');
-
+    //console.log(data)
     data.docs.forEach(element => {
          const tr = document.createElement('tr');
          tr.id = element._id;

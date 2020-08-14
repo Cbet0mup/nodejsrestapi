@@ -5,6 +5,7 @@ const deleteUserByName = document.getElementById('deleteByName');
 const updateUserById = document.getElementById('updateByiD');
 const request = document.getElementById('request');
 const update = document.getElementById('update');
+
 function dataByDB(num){
     getDataByDB(MONGOURI + pageLimit + getPageNum(num))
             .then(data => getUser(data))
