@@ -4,7 +4,7 @@ window.onload = () => {
         if(this.value != '' && !(this.value.match(/\s+/i))){
             setTimeout(() => {
                 searchByName(this.value.trim());
-            }, 250)
+            }, 300)
             
             //console.log(this.value);
         } else dataByDB(1);
@@ -15,17 +15,13 @@ function searchByName (names){
 
     let uri = MONGOURI + '/' + names;  //гибрид адреса и параметра запроса
 
-    // let user = {      //объект нового юзверя
-    //     name: `${names}`
-    // };
-
-    getDataByDB(uri)// + pageLimit + getPageNum(1)
+    getDataByDB(uri)
         .then(data => getUser2(data))
         .catch((err)=>{console.log(err)});
 
 }
 
-function getUser2(data){
+function getUser2(data){  // пришлось переписать функцию и воткнуть сюда
     
     resBlockInit();
     getTable();

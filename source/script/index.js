@@ -1,7 +1,7 @@
 const getTableToWriteNewData = document.getElementById('addNewData');
 const writeUser = document.getElementById('writeUser');
-const getUserByOneName = document.getElementById('getUserByName');
-const deleteUserByName = document.getElementById('deleteByName');
+//const getUserByOneName = document.getElementById('getUserByName');
+const deleteUser = document.getElementById('deleteButton');
 const updateUserById = document.getElementById('updateByiD');
 const request = document.getElementById('request');
 const update = document.getElementById('update');
@@ -50,6 +50,12 @@ writeUser.addEventListener("submit", (e) => { writeNewUserToDb(e)});
 // });
 
 /**************************************    delete   ********************* */
+
+deleteUser.addEventListener('click', (e) => {
+    e.preventDefault();
+    delUsr();
+    dataByDB(1);
+});
 // deleteUserByName.addEventListener('submit', (e) => {
 //     e.preventDefault();
 //     resBlockInit();

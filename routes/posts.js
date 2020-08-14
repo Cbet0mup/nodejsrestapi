@@ -51,10 +51,10 @@ router.post('/', async(req, res) => {
 });
 
 //REMOVE
-router.delete('/:name', async(req, res) => {
+router.delete('/:id', async(req, res) => {
     try {
        
-        const removedPost = await Post.deleteOne({name: req.params.name});
+        const removedPost = await Post.deleteOne({_id: req.params.id});
         res.json(removedPost);
 
     } catch (error) {
