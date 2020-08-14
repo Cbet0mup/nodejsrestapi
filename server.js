@@ -13,7 +13,7 @@ app.use('/posts', postRoute);
 
 app.use('/', express.static('source'));  // чтобы не ебаться с шаблонизаторами
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 80; //3000
 
 //DB connect 
 
