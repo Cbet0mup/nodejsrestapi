@@ -3,9 +3,8 @@ const writeUser = document.getElementById('writeUser');
 const getUserByOneName = document.getElementById('getUserByName');
 const deleteUserByName = document.getElementById('deleteByName');
 const updateUserById = document.getElementById('updateByiD');
-const output = document.getElementById('response');
-const paginationRowInit = document.getElementById('ulPag');
-
+const request = document.getElementById('request');
+const update = document.getElementById('update');
 function dataByDB(num){
     getDataByDB(MONGOURI + pageLimit + getPageNum(num))
             .then(data => getUser(data))
@@ -73,4 +72,4 @@ writeUser.addEventListener("submit", (e) => { writeNewUserToDb(e)});
 
 // });
 /**************************************   update     **************** */
-updateUserById.addEventListener('submit', (e) => {updateUser(e);});
+updateUserById.addEventListener('submit', (e) => {updateUser(e); dataByDB(1);});

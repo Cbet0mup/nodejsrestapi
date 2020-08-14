@@ -22,20 +22,8 @@ function writeNewUserToDb(e){
           paginationRowInit.innerHTML = '';  // чтоб стрелки не дублировались
 
           writeNewUser(MONGOURI, user)
-            .then(() => {getMessage(true);});
-    } else getMessage(false);
-}
-
-function validator(name, post, email){
-    
-    if(name !== '' && post !== '' && testMail(email)) {
-      return true;
-    }  else return false;
-}
-
-function testMail(mail) {
-  let reg = /^[\w]{1}[\w-\.]*@[\w-]+\.[a-z]{2,4}$/i;
-  return reg.test(mail) ? true: false;
+            .then(() => {getMessage(true, 'Новый объект успешно внесён.');});
+    } else {getMessage(false, 'Ошибка. Заполните все поля правильно.'); showBlockInput();}
 }
 
 async function writeNewUser(url, data) {

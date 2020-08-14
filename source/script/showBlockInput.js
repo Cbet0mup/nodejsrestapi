@@ -1,14 +1,15 @@
 const disableButtonWriter = document.getElementById('disableButton');
 const disableButtonUpdater = document.getElementById('disableButtonUp');
-const request = document.getElementById('request');
-const update = document.getElementById('update');
+
 
     disableButtonWriter.onclick = () => {
         request.style.display = 'none';  //красная кнопка
+        dataByDB(1);
 };
 
     disableButtonUpdater.onclick = () => {
     update.style.display = 'none';  //красная кнопка
+    dataByDB(1);
 };
 
 function showBlockInput() {

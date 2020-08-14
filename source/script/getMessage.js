@@ -1,11 +1,12 @@
 const messageBlock = document.getElementById('messageBlock');
 const message = document.getElementById('message');
 
-function getMessage(data) {
+function getMessage(data, mess) {
     if(data){
         request.style.display = 'none';
+        update.style.display = 'none';
     messageBlock.style.display = 'block';
-    message.innerHTML = `Новый объект успешно внесён.`;
+    message.innerHTML = mess;
     setTimeout(() => {
         messageBlock.style.display = 'none';
         resBlockInit();
@@ -14,15 +15,11 @@ function getMessage(data) {
     }, 2000);
     } else {
         request.style.display = 'none';
+        update.style.display = 'none';
         messageBlock.style.display = 'block';
-        message.innerHTML = `Заполните все поля правильно`;
+        message.innerHTML = mess;
         setTimeout(() => {
             messageBlock.style.display = 'none';
-            
-            showBlockInput();
-            dataByDB(1);
-            
-
     }, 2000);
     }
     

@@ -1,7 +1,10 @@
 // 
-// 
+const paginationRowInit = document.getElementById('ulPag');
+
+const output = document.getElementById('response');
 
 function resBlockInit(){
-   return output.innerHTML = '';
+   output.innerHTML = '';
+   paginationRowInit.innerHTML = '';
 
 }
