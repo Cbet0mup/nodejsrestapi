@@ -1,4 +1,4 @@
-const MONGOURI = 'http://localhost:3000/posts';
+const MONGOURI = 'https://mongodbtestcase.herokuapp.com/posts/';
 
 const pageLimit = '?limit=10'; //10 строк
 
