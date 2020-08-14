@@ -6,7 +6,7 @@ window.onload = () => {
                 searchByName(this.value.trim());
             }, 250)
             
-            console.log(this.value);
+            //console.log(this.value);
         } else dataByDB(1);
     };
 };
@@ -30,7 +30,7 @@ function getUser2(data){
     resBlockInit();
     getTable();
     let tbody = document.getElementById('tbody');
-    console.log(data)
+    //console.log(data)
     data.forEach(element => {
          const tr = document.createElement('tr');
          tr.id = element._id;
