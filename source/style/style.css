@@ -1,0 +1,37 @@
+.body {
+    background-color: rgb(51, 59, 49);
+    background-image: url(/img/fon.jpg);
+    background-blend-mode: overlay;
+}
+
+.request {
+    margin-top: 50px;
+    /*visibility: hidden; /*hidden; /*visible*/
+}
+
+.request:hover {
+    margin-top: 50px;
+    display: block; /*block*/
+}
+
+.aaa {
+    font-size: x-large;
+    font-weight: 900;
+    text-shadow: 3px 2px 6px lawngreen, 0 0 1em rgb(10, 3, 3);
+}
+
+.text p {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: lime;
+    line-height: 1.5;
+    font-weight: 500;
+    padding-left: 15px;
+}
+
+.navbar-text {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.response {
+    margin-top: 50px;
+}
