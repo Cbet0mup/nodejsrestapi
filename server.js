@@ -13,7 +13,7 @@ app.use('/posts', postRoute);
 
 app.use('/', express.static('source'));  // чтобы не ебаться с шаблонизаторами
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3000;
 
 //DB connect 
 
@@ -21,7 +21,7 @@ mongoose.connect(process.env.DB_CONNECTION, {useNewUrlParser: true, useUnifiedTo
         .then(()=> app.listen(PORT, ()=>{
             console.log(`Connect server and DB, port: ${PORT}...`);
         }))
-        .catch(err => console.log(`Error connecting to mongo : ${process.env.DB_CONNECTION}`, err))
+        .catch(err => console.log(`Error connecting to mongo : ${process.env.DB_CONNECTION}`, err));
 
 //listen server
 

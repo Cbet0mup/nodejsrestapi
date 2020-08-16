@@ -16,7 +16,7 @@ function pagination(totalPages, currentPage) {
         
         dataByDB(numberPage);
 
-    };
+    }
 /*******************   создадим блок нумерации   *********** */    
     const ul = document.getElementById('ulPag');
 
@@ -60,7 +60,7 @@ const child = ul.lastElementChild; // ссыль на крайнего дитя
         a.onclick = () =>   // клик
         {
          pagEvent(index);   
-        }
+        };
          li.appendChild(a);
         child.insertAdjacentElement('beforeBegin', li);
         

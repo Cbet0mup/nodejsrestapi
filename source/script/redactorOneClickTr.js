@@ -5,7 +5,7 @@ function redactorOneClickTr(elemId){
     let post = elem.getAttribute('data-post');
     let email = elem.getAttribute('data-email');
     
-    showBlockUpdate()
+    showBlockUpdate();
     let nameVal = document.getElementById('usernameUp');
     let postVal = document.getElementById('postUp');
     let emailVal = document.getElementById('emailUp');

@@ -4,7 +4,7 @@ window.onload = () => {
         if(this.value != '' && !(this.value.match(/\s+/i))){
             setTimeout(() => {
                 searchByName(this.value.trim());
-            }, 300)
+            }, 300);
             
             //console.log(this.value);
         } else dataByDB(1);
@@ -17,7 +17,7 @@ function searchByName (names){
 
     getDataByDB(uri)
         .then(data => getUser2(data))
-        .catch((err)=>{console.log(err)});
+        .catch((err)=>console.log(err));
 
 }
 
