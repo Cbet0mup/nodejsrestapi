@@ -1,5 +1,5 @@
 
-function writeNewUserToDb(e){
+export default function writeNewUserToDb(e){
     e.preventDefault();
     //resBlockInit();
 

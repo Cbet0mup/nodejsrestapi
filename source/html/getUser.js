@@ -1,4 +1,6 @@
-function getUser(data){
+
+
+export default function getUser(data){
     const totalPages = data.totalPages,
         page = data.page;
 

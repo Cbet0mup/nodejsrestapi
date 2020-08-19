@@ -1,10 +1,16 @@
-function delUsr() {
+import Config from '../config/app.js';
+import getMessage from '../html/getMessage.js';
+
+const conf = new Config();
+
+
+export default function delUserByDb() {
     let name = document.getElementById('usernameUp');
     let post = document.getElementById('postUp');
     let email = document.getElementById('emailUp');
     let id = name.getAttribute('data-id');
 
-    let uri = MONGOURI + '/' + id.trim();
+    let uri = conf.mongouri() + '/' + id.trim();
     if(id != ''){
         delUser(uri)
         .then(data => {

@@ -1,7 +1,7 @@
 //выведем форму добавления на экран
 
 
-function addInfoGetTable(e) {
+export default function addInfoGetTable(e) {
         e.preventDefault();
         showBlockInput();
         

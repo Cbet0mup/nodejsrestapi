@@ -1,7 +1,7 @@
 const messageBlock = document.getElementById('messageBlock');
 const message = document.getElementById('message');
 
-function getMessage(data, mess) {
+export default function getMessage(data, mess) {
     if(data){
         request.style.display = 'none';
         update.style.display = 'none';

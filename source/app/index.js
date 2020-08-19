@@ -1,23 +1,23 @@
+import dataByDB from '../db/dataByDB.js';
+import addInfoGetTable from '../html/addInfoGetTable.js';
+import writeNewUserToDb from '../db/writeNewUser.js';
+import delUserByDb from '../db/delete.js';
+import updateUser from '../db/update.js';
 
 const getTableToWriteNewData = document.getElementById('addNewData');
 const writeUser = document.getElementById('writeUser');
-//const getUserByOneName = document.getElementById('getUserByName');
 const deleteUser = document.getElementById('deleteButton');
 const updateUserById = document.getElementById('updateByiD');
 const request = document.getElementById('request');
 const update = document.getElementById('update');
 
-function dataByDB(num){
-    getDataByDB(MONGOURI + pageLimit + getPageNum(num))
-            .then(data => getUser(data))
-            .catch((err)=>console.log(err));
-}
+
 //**************************  вывести базу при загрузке страницы,дефолт: лимит 5 стр 1 ******************************** */
 
 document.addEventListener("DOMContentLoaded", function(){
 
     getTableToWriteNewData.addEventListener('click', e => addInfoGetTable(e));
-    dataByDB(1);
+    dataByDB();
 });
 
 /*************************        запись новго  ******************************************* */
@@ -28,9 +28,9 @@ writeUser.addEventListener("submit", (e) =>  writeNewUserToDb(e));
 
 deleteUser.addEventListener('click', (e) => {
     e.preventDefault();
-    delUsr();
-    dataByDB(1);
+    delUserByDb();
+    dataByDB();
 });
 
 /**************************************   update     **************** */
-updateUserById.addEventListener('submit', (e) => {updateUser(e); dataByDB(1);});
+updateUserById.addEventListener('submit', (e) => {updateUser(e); dataByDB();});

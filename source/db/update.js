@@ -1,5 +1,5 @@
 
-function updateUser(e) {
+export default function updateUser(e) {
   e.preventDefault();
   //resBlockInit();
   let name = document.getElementById('usernameUp');
