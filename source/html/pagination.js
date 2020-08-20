@@ -1,4 +1,10 @@
-function pagination(totalPages, currentPage) {
+import dataByDB from '../db/dataByDB.js';
+import Config from '../config/app.js';
+
+const config = new Config();
+
+
+export default function pagination(totalPages, currentPage) {
 
     function pagEvent(param) // замыкание
     {                       // реализуем работу стрелочек в пагинации
@@ -14,9 +20,9 @@ function pagination(totalPages, currentPage) {
 
         document.getElementById('ulPag').innerHTML = "";
         
-        dataByDB(numberPage);
+        dataByDB(config.pagelimits, numberPage);
 
-    };
+    }
 /*******************   создадим блок нумерации   *********** */    
     const ul = document.getElementById('ulPag');
 
@@ -60,7 +66,7 @@ const child = ul.lastElementChild; // ссыль на крайнего дитя
         a.onclick = () =>   // клик
         {
          pagEvent(index);   
-        }
+        };
          li.appendChild(a);
         child.insertAdjacentElement('beforeBegin', li);
         

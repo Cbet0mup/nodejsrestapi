@@ -1,4 +1,9 @@
-function getUser(data){
+import resBlockInit from './resBlockInit.js';
+import getTable from './getTable.js';
+import redactorOneClickTr from './redactorOneClickTr.js';
+import pagination from './pagination.js';
+
+export default function getUser(data){
     const totalPages = data.totalPages,
         page = data.page;
 

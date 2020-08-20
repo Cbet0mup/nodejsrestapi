@@ -1,7 +1,15 @@
+import dataByDB from '../db/dataByDB.js';
+import resBlockInit from './resBlockInit.js';
+import {request} from './showBlockInput.js';
+import {update} from './showBlockInput.js';
+
+
+
+
 const messageBlock = document.getElementById('messageBlock');
 const message = document.getElementById('message');
 
-function getMessage(data, mess) {
+export default function getMessage(data, mess) {
     if(data){
         request.style.display = 'none';
         update.style.display = 'none';
@@ -10,9 +18,9 @@ function getMessage(data, mess) {
     setTimeout(() => {
         messageBlock.style.display = 'none';
         resBlockInit();
-        dataByDB(1);
+        dataByDB();
 
-    }, 2000);
+    }, 3000);
     } else {
         request.style.display = 'none';
         update.style.display = 'none';
@@ -20,7 +28,7 @@ function getMessage(data, mess) {
         message.innerHTML = mess;
         setTimeout(() => {
             messageBlock.style.display = 'none';
-    }, 2000);
+    }, 3000);
     }
     
 }

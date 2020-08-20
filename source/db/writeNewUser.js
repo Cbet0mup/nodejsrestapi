@@ -1,5 +1,15 @@
+import validator from './validator';
+import paginationRowInit from '../html/resBlockInit.js';
+import Config from '../config/app.js';
+import getMessage from '../html/getMessage.js';
+import {showBlockInput} from '../html/showBlockInput.js';
 
-function writeNewUserToDb(e){
+
+
+const conf = new Config();
+
+
+export default function writeNewUserToDb(e){
     e.preventDefault();
     //resBlockInit();
 
@@ -21,7 +31,7 @@ function writeNewUserToDb(e){
           email.value = "";
           paginationRowInit.innerHTML = '';  // чтоб стрелки не дублировались
 
-          writeNewUser(MONGOURI, user)
+          writeNewUser(conf.mongourl, user)
             .then(() => {getMessage(true, 'Новый объект успешно внесён.');});
     } else {getMessage(false, 'Ошибка. Заполните все поля правильно.'); showBlockInput();}
 }

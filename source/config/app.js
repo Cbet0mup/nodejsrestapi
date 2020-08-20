@@ -1,10 +1,32 @@
-const MONGOURI = 'https://mongodbtestcase.herokuapp.com/posts';
+export default class Сonfig {
+    constructor() {
+        this._MONGOURI = 'http://localhost:3000/posts';
+        this.pageLimit = 10;                     // дефолтное колличество выводимых страниц
+    }
+    
+    get mongourl(){
+        return this._MONGOURI;
+    }
+    getpageLimit(num){
+        return `?limit=${num}`;   //колличество строк
+    }
 
-const pageLimit = '?limit=10'; //10 строк
+    getpageNum (num) {
+        return `&page=${num}`;   // с какой страницы начать вывод
+    }
 
-function getPageNum (num) {
-    return page = `&page=${num}`;
+    get pagelimits(){
+        return this.pageLimit;
+    }
 }
+
+// const MONGOURI = 'http://localhost:3000/posts';
+
+// const pageLimit = '?limit=10'; //10 строк
+
+// function getPageNum (num) {
+//     return `&page=${num}`;
+// }
 
 
 // https://mongodbtestcase.herokuapp.com/posts

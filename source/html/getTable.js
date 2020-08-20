@@ -1,4 +1,6 @@
-function getTable(){
+import {output} from './resBlockInit.js';
+
+export default function getTable(){
     const table = document.createElement('table');
     table.classList.add('table');
     table.classList.add('table-striped');

@@ -1,15 +1,20 @@
+import dataByDB from '../db/dataByDB.js';
+
+export const request = document.getElementById('request');
+export const update = document.getElementById('update');
+
 const disableButtonWriter = document.getElementById('disableButton');
 const disableButtonUpdater = document.getElementById('disableButtonUp');
 
 
     disableButtonWriter.onclick = () => {
         request.style.display = 'none';  //красная кнопка
-        dataByDB(1);
+        dataByDB();
 };
 
     disableButtonUpdater.onclick = () => {
     update.style.display = 'none';  //красная кнопка
-    dataByDB(1);
+    dataByDB();
 };
 
 function showBlockInput() {
@@ -21,3 +26,5 @@ function showBlockUpdate() {
     request.style.display = 'none';
     update.style.display = 'block';
 }
+
+export {showBlockInput, showBlockUpdate};

@@ -1,5 +1,14 @@
+import validator from './validator';
+import Config from '../config/app.js';
+import getMessage from '../html/getMessage.js';
+import {showBlockUpdate} from '../html/showBlockInput.js';
+import {paginationRowInit} from '../html/resBlockInit.js';
 
-function updateUser(e) {
+
+const conf = new Config();
+
+
+export default function updateUser(e) {
   e.preventDefault();
   //resBlockInit();
   let name = document.getElementById('usernameUp');
@@ -13,7 +22,7 @@ function updateUser(e) {
     post: `${post.value.trim()}`,
     email: `${email.value.trim()}`
   };
-  let uri = MONGOURI + '/' + id.trim();  //гибрид адреса и параметра запроса
+  let uri = conf.mongourl + '/' + id.trim();  //гибрид адреса и параметра запроса
   //console.log(uri);
 
   if (validator(user.name, user.post, user.email)) {
@@ -32,7 +41,7 @@ function updateUser(e) {
           return;
         }
       })
-      .catch((err) => { console.log(err) });
+      .catch(err =>  console.log(err) );
 
   } else {getMessage(false, 'Ошибка. Заполните все поля правильно.'); showBlockUpdate();}
 }

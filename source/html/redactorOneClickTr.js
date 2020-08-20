@@ -1,11 +1,14 @@
-function redactorOneClickTr(elemId){
+import {showBlockUpdate} from './showBlockInput.js';
+
+
+export default function redactorOneClickTr(elemId){
     const elem = document.getElementById(elemId);
     let id = elem.getAttribute('id');
     let name = elem.getAttribute('data-name');
     let post = elem.getAttribute('data-post');
     let email = elem.getAttribute('data-email');
     
-    showBlockUpdate()
+    showBlockUpdate();
     let nameVal = document.getElementById('usernameUp');
     let postVal = document.getElementById('postUp');
     let emailVal = document.getElementById('emailUp');
