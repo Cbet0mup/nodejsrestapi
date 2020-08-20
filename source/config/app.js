@@ -4,18 +4,18 @@ export default class Сonfig {
         this.pageLimit = 10;                     // дефолтное колличество выводимых страниц
     }
     
-    get mongouri(){
+    get mongourl(){
         return this._MONGOURI;
     }
-    pageLimit(num){
+    getpageLimit(num){
         return `?limit=${num}`;   //колличество строк
     }
 
-    pageNum (num) {
+    getpageNum (num) {
         return `&page=${num}`;   // с какой страницы начать вывод
     }
 
-    get pagelimit(){
+    get pagelimits(){
         return this.pageLimit;
     }
 }

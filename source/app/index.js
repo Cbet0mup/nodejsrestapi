@@ -3,6 +3,7 @@ import addInfoGetTable from '../html/addInfoGetTable.js';
 import writeNewUserToDb from '../db/writeNewUser.js';
 import delUserByDb from '../db/delete.js';
 import updateUser from '../db/update.js';
+import liveSearchUser from '../db/liveSearchController.js';
 
 const getTableToWriteNewData = document.getElementById('addNewData');
 const writeUser = document.getElementById('writeUser');
@@ -15,6 +16,7 @@ const updateUserById = document.getElementById('updateByiD');
 document.addEventListener("DOMContentLoaded", function(){
 
     getTableToWriteNewData.addEventListener('click', e => addInfoGetTable(e));
+    liveSearchUser();
     dataByDB();
 });
 

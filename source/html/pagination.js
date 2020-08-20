@@ -20,7 +20,7 @@ export default function pagination(totalPages, currentPage) {
 
         document.getElementById('ulPag').innerHTML = "";
         
-        dataByDB(config.pagelimit(), numberPage);
+        dataByDB(config.pagelimits, numberPage);
 
     }
 /*******************   создадим блок нумерации   *********** */    

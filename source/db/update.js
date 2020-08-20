@@ -22,7 +22,7 @@ export default function updateUser(e) {
     post: `${post.value.trim()}`,
     email: `${email.value.trim()}`
   };
-  let uri = conf.mongouri() + '/' + id.trim();  //гибрид адреса и параметра запроса
+  let uri = conf.mongourl + '/' + id.trim();  //гибрид адреса и параметра запроса
   //console.log(uri);
 
   if (validator(user.name, user.post, user.email)) {

@@ -31,7 +31,7 @@ export default function writeNewUserToDb(e){
           email.value = "";
           paginationRowInit.innerHTML = '';  // чтоб стрелки не дублировались
 
-          writeNewUser(conf.mongouri(), user)
+          writeNewUser(conf.mongourl, user)
             .then(() => {getMessage(true, 'Новый объект успешно внесён.');});
     } else {getMessage(false, 'Ошибка. Заполните все поля правильно.'); showBlockInput();}
 }

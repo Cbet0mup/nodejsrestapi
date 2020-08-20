@@ -11,7 +11,7 @@ export default function delUserByDb() {
     let email = document.getElementById('emailUp');
     let id = name.getAttribute('data-id');
 
-    let uri = conf.mongouri() + '/' + id.trim();
+    let uri = conf.mongourl + '/' + id.trim();
     if(id != ''){
         delUser(uri)
         .then(data => {
