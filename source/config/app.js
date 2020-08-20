@@ -1,6 +1,6 @@
 export default class Сonfig {
     constructor() {
-        this._MONGOURI = 'http://localhost:3000/posts';
+        this._MONGOURI = 'https://mongodbtestcase.herokuapp.com/posts';
         this.pageLimit = 10;                     // дефолтное колличество выводимых страниц
     }
     
