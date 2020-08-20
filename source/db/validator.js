@@ -1,4 +1,4 @@
-function validator(name, post, email) {
+ export default function validator(name, post, email) {
 
   if (name !== '' && post !== '' && testMail(email)) {
     return true;

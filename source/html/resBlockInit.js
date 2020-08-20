@@ -8,3 +8,5 @@ export default function resBlockInit(){
    paginationRowInit.innerHTML = '';
 
 }
+
+export {paginationRowInit, output};

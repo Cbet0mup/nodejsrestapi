@@ -1,4 +1,4 @@
-function getTable(){
+export default function getTable(){
     const table = document.createElement('table');
     table.classList.add('table');
     table.classList.add('table-striped');

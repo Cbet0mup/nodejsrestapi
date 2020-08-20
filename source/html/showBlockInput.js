@@ -1,3 +1,8 @@
+import dataByDB from '../db/dataByDB.js';
+
+export const request = document.getElementById('request');
+export const update = document.getElementById('update');
+
 const disableButtonWriter = document.getElementById('disableButton');
 const disableButtonUpdater = document.getElementById('disableButtonUp');
 
@@ -21,3 +26,5 @@ function showBlockUpdate() {
     request.style.display = 'none';
     update.style.display = 'block';
 }
+
+export {showBlockInput, showBlockUpdate};

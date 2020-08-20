@@ -1,3 +1,12 @@
+import validator from './validator';
+import Config from '../config/app.js';
+import getMessage from '../html/getMessage.js';
+import {showBlockUpdate} from '../html/showBlockInput.js';
+import {paginationRowInit} from '../html/resBlockInit.js';
+
+
+const conf = new Config();
+
 
 export default function updateUser(e) {
   e.preventDefault();
@@ -13,7 +22,7 @@ export default function updateUser(e) {
     post: `${post.value.trim()}`,
     email: `${email.value.trim()}`
   };
-  let uri = MONGOURI + '/' + id.trim();  //гибрид адреса и параметра запроса
+  let uri = conf.mongouri() + '/' + id.trim();  //гибрид адреса и параметра запроса
   //console.log(uri);
 
   if (validator(user.name, user.post, user.email)) {

@@ -1,3 +1,6 @@
+import resBlockInit from './resBlockInit.js';
+import getTable from './getTable.js';
+import redactorOneClickTr from './redactorOneClickTr.js';
 
 
 export default function getUserLiveSearch(data) {

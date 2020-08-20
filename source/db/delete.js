@@ -1,5 +1,6 @@
 import Config from '../config/app.js';
 import getMessage from '../html/getMessage.js';
+import paginationRowInit from '../html/resBlockInit.js';
 
 const conf = new Config();
 

@@ -1,4 +1,7 @@
-function redactorOneClickTr(elemId){
+import {showBlockUpdate} from './showBlockInput.js';
+
+
+export default function redactorOneClickTr(elemId){
     const elem = document.getElementById(elemId);
     let id = elem.getAttribute('id');
     let name = elem.getAttribute('data-name');

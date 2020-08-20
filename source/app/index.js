@@ -8,8 +8,6 @@ const getTableToWriteNewData = document.getElementById('addNewData');
 const writeUser = document.getElementById('writeUser');
 const deleteUser = document.getElementById('deleteButton');
 const updateUserById = document.getElementById('updateByiD');
-const request = document.getElementById('request');
-const update = document.getElementById('update');
 
 
 //**************************  вывести базу при загрузке страницы,дефолт: лимит 5 стр 1 ******************************** */

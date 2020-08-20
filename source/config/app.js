@@ -1,6 +1,7 @@
 export default class Сonfig {
     constructor() {
         this._MONGOURI = 'http://localhost:3000/posts';
+        this.pageLimit = 10;                     // дефолтное колличество выводимых страниц
     }
     
     get mongouri(){
@@ -12,6 +13,10 @@ export default class Сonfig {
 
     pageNum (num) {
         return `&page=${num}`;   // с какой страницы начать вывод
+    }
+
+    get pagelimit(){
+        return this.pageLimit;
     }
 }
 
