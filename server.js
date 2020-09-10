@@ -4,14 +4,60 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 require('dotenv/config');  // скрытая херня с секретными данными login/pass
 
+//passport depenencies constants
+const morgan = require('morgan');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const expressHandlebars = require('express-handlebars');
+const flash = require('connect-flash');
+const session = require('express-session');
+const passport = require('passport');
+require('./config/passport');
+//********************************** */
 
+app.use(morgan('dev'));
+
+//представления
+app.set('views', path.join(__dirname, 'views'));
+app.engine('handlebars', expressHandlebars({defaultLayout: 'layout'}));
+
+//middleware
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false}));
+app.use(cookieParser);
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+    cookie: {maxAge: 60000},
+    secret: 'ninjasecret',
+    saveUninitialized: false,
+    resave: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(flash());
+app.use((req, res, next) => {
+    res.locals.success_messages = req.flash('success');
+    res.locals.error_messages = req.flash('error');
+    next();
+});
+
+// routes
+
+app.use('/', require('./routes/index'));
+app.use('/', require('./routes/users'));
+
+// catch 404 and forward to error handler
+app.use((req, res, next) => {
+    res.render('notFound');
+  });
+
 // Import Routes
-const postRoute = require('./routes/posts');
+//const postRoute = require('./routes/posts');
 
-app.use('/posts', postRoute);
+//app.use('/posts', postRoute);
 
-app.use('/', express.static('source'));  // чтобы не ебаться с шаблонизаторами
+//app.use('/', express.static('source'));  // чтобы не ебаться с шаблонизаторами
 
 const PORT = process.env.PORT || 80;
 
