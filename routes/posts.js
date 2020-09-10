@@ -7,8 +7,6 @@ const router = express.Router();
 
 
 
-
-
 // Получаем все записи
 router.get('/', async(req, res) => {
     try{     
@@ -16,7 +14,7 @@ router.get('/', async(req, res) => {
         const limit = req.query.limit || 5;
         const page = req.query.page || 1;
 
-         const post = await Post.paginate({},{limit, page})
+         const post = await Post.paginate({},{limit, page});
         
         res.json(post);
     }catch(err){
@@ -47,7 +45,7 @@ router.post('/', async(req, res) => {
         const savedPost = await post.save();
         res.json(savedPost);
     } catch(err){        
-        res.json({message: err})};
+        res.json({message: err});}
 });
 
 //REMOVE
@@ -81,7 +79,7 @@ router.patch('/:id', async(req, res) => {
             );
             res.json(updatePost);
     } catch (error) {
-        console.log('UPDATE BD')
+        console.log('UPDATE BD');
 
         res.json({message: error});
     }
