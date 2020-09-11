@@ -26,7 +26,7 @@ app.set('view engine', 'handlebars');
 //middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}));
-app.use(cookieParser);
+//app.use(cookieParser);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
     cookie: {maxAge: 60000},
@@ -61,7 +61,7 @@ app.use((req, res, next) => {
 
 //app.use('/', express.static('source'));  // чтобы не ебаться с шаблонизаторами
 
-const PORT = 5000;//process.env.PORT || 80;
+const PORT = 7000;//process.env.PORT || 80;
 
 //DB connect 
 
