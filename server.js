@@ -12,14 +12,16 @@ const expressHandlebars = require('express-handlebars');
 const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
-require('./config/passport');
+//require('./config/passport');
 //********************************** */
 
 app.use(morgan('dev'));
 
 //представления
-app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', expressHandlebars({defaultLayout: 'layout'}));
+app.set('views', './views');//path.join(__dirname, 'views'));
+app.set('view engine', 'handlebars');
+//console.log(path.join(__dirname, 'views'));
 
 //middleware
 app.use(bodyParser.json());
@@ -44,8 +46,8 @@ app.use((req, res, next) => {
 
 // routes
 
-app.use('/', require('./routes/index'));
-app.use('/', require('./routes/users'));
+app.use('/', require('./routes/index.js'));
+app.use('/users', require('./routes/users.js'));
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
@@ -59,7 +61,7 @@ app.use((req, res, next) => {
 
 //app.use('/', express.static('source'));  // чтобы не ебаться с шаблонизаторами
 
-const PORT = process.env.PORT || 80;
+const PORT = 5000;//process.env.PORT || 80;
 
 //DB connect 
 
